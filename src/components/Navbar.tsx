@@ -41,7 +41,7 @@ export default function Navbar() {
     >
       {/* ── Desktop Navbar: 3-column grid ── */}
       <div className="container-custom">
-        <div className="hidden lg:grid lg:grid-cols-3 items-center h-20">
+        <div className="hidden lg:grid lg:grid-cols-3 items-center h-[72px]">
 
           {/* Col 1 — Logo (left-aligned) */}
           <Link href="/" className="flex items-center gap-3 group w-fit">
@@ -66,17 +66,17 @@ export default function Navbar() {
           </Link>
 
           {/* Col 2 — Nav links (center-aligned) */}
-          <div className="flex items-center justify-center gap-0.5">
+          <div className="flex items-center justify-center gap-3">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap tracking-wide ${
                     isActive
                       ? "text-white bg-white/15"
-                      : "text-white/75 hover:text-white hover:bg-white/10"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.label}
