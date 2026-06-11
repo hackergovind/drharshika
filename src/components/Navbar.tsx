@@ -89,7 +89,7 @@ export default function Navbar() {
           <div className="flex justify-end">
             <Link
               href="/book"
-              className="btn-primary !bg-white !text-primary hover:!bg-white/90 !py-2.5 !px-5 text-sm font-semibold shadow-lg"
+              className="flex items-center gap-2 bg-white text-primary py-2.5 px-5 rounded-full text-sm font-semibold shadow-lg hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
               <span>Book Consultation</span>
@@ -125,7 +125,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="/book"
-              className="btn-primary !bg-white !text-primary !py-2 !px-3 text-xs font-semibold hidden sm:flex"
+              className="hidden sm:flex items-center gap-1.5 bg-white text-primary py-2 px-4 rounded-full text-xs font-semibold shadow-md hover:bg-white/90 transition-all"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Book</span>
