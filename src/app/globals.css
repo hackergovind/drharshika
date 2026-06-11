@@ -104,10 +104,11 @@ img {
 
 /* ── Glassmorphism Navbar ── */
 .navbar-glass {
-  background: rgba(45, 52, 54, 0.92);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(42, 90, 61, 0.96) 0%, rgba(58, 99, 71, 0.95) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 20px rgba(42, 90, 61, 0.3);
 }
 
 /* ── Card Styles ── */
