@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Sparkles,
   Heart,
-  Shield,
   Globe,
 } from "lucide-react";
 
@@ -19,29 +18,29 @@ export default function Hero() {
       <div className="absolute bottom-20 left-[10%] w-40 h-40 rounded-full bg-tertiary/5 animate-float hidden lg:block" style={{ animationDelay: "2s" }} />
       <div className="absolute top-1/2 right-[5%] w-24 h-24 rounded-full bg-secondary/5 animate-float hidden lg:block" style={{ animationDelay: "4s" }} />
 
-      <div className="container-custom relative z-10 py-16 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-custom relative z-10 py-12 lg:py-0">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Content */}
-          <div>
+          <div className="text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary-600 px-4 py-2 rounded-full text-sm font-medium mb-8">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 <span>Personalized Homeopathic Care</span>
               </div>
 
-              <h1 className="font-heading mb-6">
+              <h1 className="font-heading mb-5">
                 <span className="text-charcoal">Healing from </span>
                 <span className="gradient-text">Within,</span>
                 <br />
                 <span className="text-charcoal">Naturally</span>
               </h1>
 
-              <p className="text-lg text-muted leading-relaxed mb-8 max-w-lg">
+              <p className="text-base lg:text-lg text-muted leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
                 Dr. Harshika Singh brings compassionate, evidence-informed
                 homeopathic care for hormonal health and musculoskeletal
                 conditions. Experience healing that addresses the root cause,
@@ -49,14 +48,30 @@ export default function Hero() {
               </p>
 
               {/* Credentials */}
-              <p className="text-sm font-medium text-charcoal mb-8">
+              <p className="text-sm font-medium text-charcoal mb-7">
                 <span className="text-primary font-semibold">BHMS, MD (Hom.)</span>
                 <span className="mx-2 text-muted">•</span>
-                <span className="text-muted">Specialist in Hormonal & Joint Health</span>
+                <span className="text-muted">Specialist in Hormonal &amp; Joint Health</span>
               </p>
 
+              {/* Mobile Doctor Image */}
+              <div className="lg:hidden mb-8">
+                <div className="relative w-48 h-48 sm:w-60 sm:h-60 mx-auto">
+                  <div className="w-full h-full rounded-3xl overflow-hidden shadow-xl border border-primary/10 bg-white/80">
+                    <Image
+                      src="/images/dr-harshika.png"
+                      alt="Dr. Harshika Singh - BHMS, MD (Hom.) - Homeopathic Specialist"
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover object-top"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row gap-3 mb-10 justify-center lg:justify-start">
                 <Link href="/book" className="btn-primary">
                   <span>Book Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -72,24 +87,24 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-wrap gap-8"
+              className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start"
             >
               {[
                 { value: "1000+", label: "Patients Treated" },
                 { value: "95%", label: "Patient Satisfaction" },
                 { value: "Pan India", label: "Online Consultations" },
               ].map((stat, i) => (
-                <div key={i} className="text-center sm:text-left">
-                  <p className="text-2xl font-heading font-bold text-primary">
+                <div key={i} className="text-center">
+                  <p className="text-xl sm:text-2xl font-heading font-bold text-primary">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-muted">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-muted">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right Content - Doctor Photo */}
+          {/* Right Content - Doctor Photo (Desktop Only) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -122,7 +137,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-charcoal">Hormonal Expert</p>
-                    <p className="text-xs text-muted">PCOS, Thyroid & More</p>
+                    <p className="text-xs text-muted">PCOS, Thyroid &amp; More</p>
                   </div>
                 </div>
               </motion.div>
@@ -154,4 +169,3 @@ export default function Hero() {
     </section>
   );
 }
-

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   GraduationCap,
   Heart,
@@ -45,20 +46,27 @@ export default function AboutPage() {
               className="lg:col-span-2"
             >
               <div className="bg-white rounded-3xl p-8 shadow-lg border border-primary/10 sticky top-28">
-                {/* Avatar */}
-                <div className="text-center mb-6">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary-dark mx-auto flex items-center justify-center mb-4">
-                    <span className="text-4xl font-heading font-bold text-white">
-                      DH
-                    </span>
-                  </div>
-                  <h2 className="font-heading text-2xl font-bold text-charcoal">
-                    Dr. Harshika Singh
-                  </h2>
-                  <p className="text-primary font-semibold mt-1">
-                    BHMS, MD (Hom.)
-                  </p>
+                {/* Author Photo + Byline */}
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20 shadow-lg">
+                  <Image
+                    src="/images/dr-harshika.png"
+                    alt="Dr. Harshika Singh, BHMS MD Hom. - Homeopathic Physician"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
+                <h2 className="font-heading text-2xl font-bold text-charcoal">
+                  Dr. Harshika Singh
+                </h2>
+                <p className="text-primary font-semibold mt-1">
+                  BHMS, MD (Hom.)
+                </p>
+                <p className="text-xs text-muted mt-1">
+                  Homeopathic Physician &amp; Wellness Expert
+                </p>
+              </div>
 
                 {/* Quick Info */}
                 <div className="space-y-4">

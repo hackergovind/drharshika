@@ -76,9 +76,9 @@ export default function ConsultationApproach() {
                 </span>
               </div>
 
-              <h4 className="font-heading font-bold text-charcoal mb-2">
+              <h3 className="font-heading font-bold text-charcoal mb-2 text-base">
                 {step.title}
-              </h4>
+              </h3>
               <p className="text-sm text-muted leading-relaxed">
                 {step.description}
               </p>

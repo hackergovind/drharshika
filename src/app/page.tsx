@@ -266,6 +266,15 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <CTABanner />
+
+      {/* YMYL Medical Disclaimer */}
+      <section className="bg-ivory-dark border-t border-primary/10">
+        <div className="container-custom py-6">
+          <p className="text-xs text-muted text-center leading-relaxed max-w-4xl mx-auto">
+            <strong className="text-charcoal-light">Medical Disclaimer:</strong> The information on this website is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional before starting any treatment. Homeopathy results may vary between individuals. Dr. Harshika Singh is a registered BHMS, MD (Hom.) practitioner.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

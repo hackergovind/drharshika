@@ -78,6 +78,7 @@ body {
   color: var(--color-charcoal);
   line-height: 1.7;
   overflow-x: hidden;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,18 +88,23 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-charcoal);
 }
 
-h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); }
-h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
-h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+h1 { font-size: clamp(1.9rem, 5vw, 3.75rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); }
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ── Glassmorphism Navbar ── */
 .navbar-glass {
-  background: rgba(45, 52, 54, 0.85);
+  background: rgba(45, 52, 54, 0.92);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -127,7 +133,7 @@ a {
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
-  padding: 14px 32px;
+  padding: 14px 28px;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 0.95rem;
@@ -140,6 +146,7 @@ a {
   gap: 8px;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .btn-primary::before {
@@ -169,7 +176,7 @@ a {
 .btn-secondary {
   background: transparent;
   color: var(--color-primary);
-  padding: 14px 32px;
+  padding: 14px 28px;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 0.95rem;
@@ -179,6 +186,7 @@ a {
   align-items: center;
   gap: 8px;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
 }
 
 .btn-secondary:hover {
@@ -191,7 +199,7 @@ a {
 .btn-tertiary {
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
   color: white;
-  padding: 14px 32px;
+  padding: 14px 28px;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 0.95rem;
@@ -201,6 +209,7 @@ a {
   align-items: center;
   gap: 8px;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
 }
 
 .btn-tertiary:hover {
@@ -308,6 +317,8 @@ a {
   color: var(--color-charcoal);
   transition: all 0.3s ease;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-input:focus {
@@ -458,24 +469,189 @@ a {
   color: var(--color-charcoal);
 }
 
-/* ── Responsive ── */
+/* ── Screen Reader Only ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE — Comprehensive fixes
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  /* Tablet */
+  .container-custom {
+    padding: 0 20px;
+  }
+}
+
 @media (max-width: 768px) {
+  /* ── Layout ── */
   .section-padding {
-    padding: 64px 0;
+    padding: 56px 0;
   }
 
   .section-padding-sm {
-    padding: 48px 0;
+    padding: 40px 0;
   }
 
   .container-custom {
     padding: 0 16px;
   }
 
+  /* ── Typography ── */
+  h1 { font-size: clamp(1.7rem, 7vw, 2.5rem); line-height: 1.25; }
+  h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+  h3 { font-size: clamp(1rem, 4vw, 1.3rem); }
+
+  /* ── Buttons ── */
   .btn-primary,
   .btn-secondary,
   .btn-tertiary {
-    padding: 12px 24px;
-    font-size: 0.9rem;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+  }
+
+  /* ── Cards ── */
+  .card-premium:hover {
+    transform: none;
+  }
+
+  /* ── Hero Section Mobile ── */
+  .hero-pattern {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 48px;
+  }
+
+  /* ── Trust Bar Mobile ── */
+  .trust-bar .flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* ── Accordion Mobile ── */
+  .accordion-trigger {
+    padding: 16px 18px;
+  }
+
+  /* ── CTA Banner Mobile ── */
+  .cta-banner .flex {
+    flex-direction: column;
+  }
+
+  /* ── Footer Mobile ── */
+  .footer-bg .grid {
+    gap: 32px;
+  }
+
+  /* ── Booking Form Mobile ── */
+  .booking-steps {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ── Small phones ── */
+  .container-custom {
+    padding: 0 12px;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  .section-padding-sm {
+    padding: 32px 0;
+  }
+
+  h1 { font-size: clamp(1.5rem, 8vw, 2rem); }
+  h2 { font-size: clamp(1.25rem, 6vw, 1.75rem); }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    padding: 11px 18px;
+    font-size: 0.85rem;
+  }
+
+  /* ── Form inputs on small screens ── */
+  .form-input {
+    padding: 12px 14px;
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+
+  /* ── Booking time grid ── */
+  .booking-time-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* ── Navbar height on very small screens ── */
+  nav .h-20 {
+    height: 64px;
+  }
+}
+
+/* ── Touch device improvements ── */
+@media (hover: none) and (pointer: coarse) {
+  .card-premium:hover {
+    transform: none;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.04),
+      0 4px 12px rgba(0, 0, 0, 0.03);
+    border-color: rgba(74, 124, 89, 0.08);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-tertiary:hover {
+    transform: none;
+  }
+
+  /* Larger tap targets */
+  .accordion-trigger {
+    min-height: 52px;
+  }
+
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ── Print styles ── */
+@media print {
+  .navbar-glass,
+  footer,
+  .btn-primary,
+  .btn-secondary {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    color: black;
   }
 }

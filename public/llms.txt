@@ -1,0 +1,26 @@
+# Dr. Harshika Wellness — LLMs.txt
+
+> Dr. Harshika Wellness is an online homeopathic clinic run by Dr. Harshika Singh, BHMS, MD (Hom.), specialising in hormonal health and musculoskeletal conditions.
+
+## About
+Dr. Harshika Singh is a qualified homeopathic physician offering personalised online consultations across India. She specialises in:
+- Hormonal & Thyroid Health: PCOS, thyroid disorders, hormonal imbalance, menstrual health
+- Musculoskeletal Health: Arthritis, joint pain, back pain, osteoporosis, mobility concerns
+
+## Services
+- Online Consultation (video/phone)
+- Case-based homeopathic prescription
+- Follow-up and monitoring
+- Health blog articles on hormonal and musculoskeletal wellness
+
+## Contact
+- Email: drharshikawellness@gmail.com
+- Instagram: @drharshikahomeopathy
+- Available: Mon–Sat, 10 AM – 7 PM IST
+
+## Qualifications
+- BHMS (Bachelor of Homeopathic Medicine and Surgery)
+- MD (Hom.) — Doctor of Medicine in Homeopathy
+
+## Website
+https://drharshika.vercel.app

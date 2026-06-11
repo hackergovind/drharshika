@@ -2,13 +2,12 @@ import Link from "next/link";
 import {
   Leaf,
   Mail,
-  Phone,
-  MapPin,
   Instagram,
   Facebook,
   Clock,
   Heart,
   ArrowRight,
+  MapPin,
 } from "lucide-react";
 
 const quickLinks = [
@@ -29,26 +28,46 @@ const serviceLinks = [
   { href: "/services#musculoskeletal", label: "Spine Health" },
 ];
 
+const legalLinks = [
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-service", label: "Terms of Service" },
+  { href: "/disclaimer", label: "Medical Disclaimer" },
+];
+
 export default function Footer() {
   return (
     <footer className="footer-bg">
       {/* Main Footer */}
       <div className="container-custom section-padding-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                 <Leaf className="w-5 h-5 text-primary-400" />
               </div>
               <div>
-                <h3 className="text-lg font-heading font-bold text-white">
+                <p className="text-lg font-heading font-bold text-white">
                   Dr. Harshika
-                </h3>
-                <p className="text-xs text-white/50">Wellness & Homeopathy</p>
+                </p>
+                <p className="text-xs text-white/50">Wellness &amp; Homeopathy</p>
               </div>
             </div>
-            <p className="text-sm text-white/60 leading-relaxed mb-6">
+
+            {/* Author / E-E-A-T signal */}
+            <div className="mb-5 p-4 rounded-xl bg-white/5 border border-white/10">
+              <p className="text-sm font-semibold text-white mb-1">
+                Dr. Harshika Singh
+              </p>
+              <p className="text-xs text-primary-300 font-medium mb-1">
+                BHMS, MD (Hom.)
+              </p>
+              <p className="text-xs text-white/50 leading-relaxed">
+                Specialist in Hormonal &amp; Musculoskeletal Health
+              </p>
+            </div>
+
+            <p className="text-sm text-white/60 leading-relaxed mb-5">
               Compassionate homeopathic care for hormonal health and
               musculoskeletal conditions. Personalized treatment plans that
               address root causes, not just symptoms.
@@ -59,7 +78,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/40 transition-colors"
-                aria-label="Instagram"
+                aria-label="Follow Dr. Harshika on Instagram"
               >
                 <Instagram className="w-4 h-4 text-white/80" />
               </a>
@@ -68,7 +87,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/40 transition-colors"
-                aria-label="Facebook"
+                aria-label="Follow Dr. Harshika on Facebook"
               >
                 <Facebook className="w-4 h-4 text-white/80" />
               </a>
@@ -77,9 +96,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-heading font-semibold text-lg mb-6">
+            <p className="text-white font-heading font-semibold text-base mb-5 uppercase tracking-wider">
               Quick Links
-            </h4>
+            </p>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -97,9 +116,9 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-heading font-semibold text-lg mb-6">
+            <p className="text-white font-heading font-semibold text-base mb-5 uppercase tracking-wider">
               Services
-            </h4>
+            </p>
             <ul className="space-y-3">
               {serviceLinks.map((link, i) => (
                 <li key={i}>
@@ -117,15 +136,15 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white font-heading font-semibold text-lg mb-6">
+            <p className="text-white font-heading font-semibold text-base mb-5 uppercase tracking-wider">
               Get in Touch
-            </h4>
+            </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-primary-400 mt-1 flex-shrink-0" />
                 <a
                   href="mailto:drharshikawellness@gmail.com"
-                  className="text-sm text-white/60 hover:text-primary-400 transition-colors"
+                  className="text-sm text-white/60 hover:text-primary-400 transition-colors break-all"
                 >
                   drharshikawellness@gmail.com
                 </a>
@@ -151,9 +170,24 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Legal Links Bar */}
       <div className="border-t border-white/10">
-        <div className="container-custom py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container-custom py-4 flex flex-wrap items-center justify-center gap-4">
+          {legalLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-xs text-white/40 hover:text-white/70 transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/5">
+        <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} Dr. Harshika Wellness. All rights reserved.
           </p>

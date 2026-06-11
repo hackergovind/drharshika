@@ -23,17 +23,17 @@ export default function CTABanner() {
             personalized consultation with Dr. Harshika Singh and experience
             the transformative power of homeopathy.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book"
-              className="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all hover:shadow-lg flex items-center gap-2 hover:-translate-y-0.5"
+              className="w-full sm:w-auto bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all hover:shadow-lg flex items-center justify-center gap-2 hover:-translate-y-0.5"
             >
               <Phone className="w-5 h-5" />
               <span>Book Consultation</span>
             </Link>
             <Link
               href="/contact"
-              className="border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all flex items-center gap-2"
+              className="w-full sm:w-auto border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2"
             >
               <span>Contact Us</span>
               <ArrowRight className="w-5 h-5" />
