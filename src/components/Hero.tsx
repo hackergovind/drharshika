@@ -44,7 +44,7 @@ export default function Hero() {
               <p className="text-sm font-medium text-charcoal mb-8">
                 <span className="text-primary font-semibold">BHMS, MD (Hom.)</span>
                 <span className="mx-2 text-muted">•</span>
-                <span className="text-muted">Specialist in Hormonal &amp; Joint Health</span>
+                <span className="text-muted">Focused on Hormonal Health, Thyroid Care &amp; Musculoskeletal Conditions</span>
               </p>
 
               {/* CTA Buttons */}

@@ -63,7 +63,7 @@ export default function Footer() {
                 BHMS, MD (Hom.)
               </p>
               <p className="text-xs text-white/50 leading-relaxed">
-                Specialist in Hormonal &amp; Musculoskeletal Health
+                Focused on Hormonal Health, Thyroid Care &amp; Musculoskeletal Conditions
               </p>
             </div>
 
