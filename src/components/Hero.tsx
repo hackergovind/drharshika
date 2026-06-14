@@ -88,13 +88,13 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[520px]">
               {/* Main photo */}
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-primary/10 bg-white relative z-10">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-primary/10 bg-[#F5EDE0] relative z-10">
                 <Image
                   src="/images/dr-harshika.png"
-                  alt="Dr. Harshika Singh, BHMS MD Hom. — Homeopathic Physician"
-                  width={600}
-                  height={650}
-                  className="w-full h-auto object-cover object-top"
+                  alt="Dr. Harshika Singh, BHMS MD Hom. — Founder & Consulting Physician"
+                  width={1000}
+                  height={700}
+                  className="w-full h-auto object-contain"
                   priority
                 />
               </div>

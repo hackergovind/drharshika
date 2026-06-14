@@ -26,7 +26,8 @@ export default function CTABanner() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book"
-              className="w-full sm:w-auto bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all hover:shadow-lg flex items-center justify-center gap-2 hover:-translate-y-0.5"
+              className="w-full sm:w-auto text-white px-8 py-4 rounded-full font-semibold transition-all hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-0.5"
+              style={{ background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)", boxShadow: "0 4px 20px rgba(249,115,22,0.5)" }}
             >
               <Phone className="w-5 h-5" />
               <span>Book Consultation</span>
