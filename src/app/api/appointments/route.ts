@@ -161,7 +161,7 @@ async function sendEmailNotification(data: AppointmentData): Promise<void> {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Dr. Harshika Wellness <appointments@drharshikawellness.com>",
+          from: process.env.RESEND_FROM_EMAIL || "Dr. Harshika Wellness <onboarding@resend.dev>",
           to: [recipientEmail],
           subject,
           html: htmlBody,
