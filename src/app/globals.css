@@ -132,7 +132,7 @@ img {
 
 /* ── Button Styles ── */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
   color: white;
   padding: 14px 28px;
   border-radius: var(--radius-full);
@@ -148,13 +148,14 @@ img {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
 }
 
 .btn-primary::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, #FB923C 0%, #F97316 100%);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -165,7 +166,7 @@ img {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 124, 89, 0.35);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.45);
 }
 
 .btn-primary span,

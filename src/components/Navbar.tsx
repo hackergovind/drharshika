@@ -89,7 +89,8 @@ export default function Navbar() {
           <div className="flex justify-end">
             <Link
               href="/book"
-              className="flex items-center gap-2 bg-white text-primary py-2.5 px-5 rounded-full text-sm font-semibold shadow-lg hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
+              className="flex items-center gap-2 py-2.5 px-5 rounded-full text-sm font-semibold shadow-lg hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap text-white"
+              style={{ background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)", boxShadow: "0 4px 14px rgba(249,115,22,0.4)" }}
             >
               <Phone className="w-4 h-4" />
               <span>Book Consultation</span>
@@ -125,7 +126,8 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="/book"
-              className="hidden sm:flex items-center gap-1.5 bg-white text-primary py-2 px-4 rounded-full text-xs font-semibold shadow-md hover:bg-white/90 transition-all"
+              className="hidden sm:flex items-center gap-1.5 py-2 px-4 rounded-full text-xs font-semibold shadow-md text-white transition-all"
+              style={{ background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)" }}
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Book</span>
@@ -183,7 +185,8 @@ export default function Navbar() {
               <div className="pt-3 pb-1">
                 <Link
                   href="/book"
-                  className="flex items-center justify-center gap-2 w-full bg-white text-primary py-3 rounded-xl font-semibold text-sm shadow-md hover:bg-white/90 transition-colors"
+                  className="flex items-center justify-center gap-2 w-full text-white py-3 rounded-xl font-semibold text-sm shadow-md transition-colors"
+                  style={{ background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)" }}
                 >
                   <Phone className="w-4 h-4" />
                   Book Consultation
