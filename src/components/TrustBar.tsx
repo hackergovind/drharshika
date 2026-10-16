@@ -35,7 +35,7 @@ export default function TrustBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8"
         >
           {trustItems.map((item, i) => (
             <motion.div

@@ -7,14 +7,14 @@ import {
   Heart,
   Bone,
   Sparkles,
-  Star,
   Check,
 } from "lucide-react";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import ConsultationApproach from "@/components/ConsultationApproach";
+import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import CTABanner from "@/components/CTABanner";
-import { services, testimonials } from "@/lib/utils";
+import { services } from "@/lib/utils";
 
 export default function HomePage() {
   return (
@@ -136,10 +136,10 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 lg:mb-16"
           >
             <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
-              ✦ What We Treat
+              What We Treat
             </span>
             <h2 className="font-heading text-charcoal">
               Our <span className="gradient-text">Specializations</span>
@@ -214,7 +214,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 lg:mb-16"
           >
             <h2 className="font-heading text-charcoal">
               What Our Patients <span className="gradient-text">Say</span>
@@ -226,47 +226,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-            {testimonials.slice(0, 3).map((t, i) => (
-              <motion.div
-                key={t.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="h-full"
-              >
-              <div className="bg-white border border-slate-200/70 rounded-2xl shadow-sm p-8 lg:p-10 h-full flex flex-col justify-between">
-                <div>
-                  <div className="flex gap-1 mb-4">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <Star
-                        key={j}
-                        className="w-4 h-4 text-tertiary fill-tertiary"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-charcoal-light leading-relaxed mb-6 text-sm">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 pt-4 border-t border-primary/8">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-sm font-bold text-primary">
-                      {t.patientInitials}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm">{t.patientInitials}</p>
-                    <p className="text-xs text-muted">
-                      Treated for {t.condition}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              </motion.div>
-            ))}
-          </div>
+          <TestimonialsMarquee />
 
           <div className="text-center mt-12">
             <Link href="/testimonials" className="btn-secondary">

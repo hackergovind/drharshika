@@ -38,8 +38,8 @@ export default function Footer() {
   return (
     <footer className="footer-bg">
       {/* Main Footer */}
-      <div className="container-custom section-padding-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      <div className="container-custom pt-16 pb-14 md:pt-20 md:pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
@@ -99,7 +99,7 @@ export default function Footer() {
             <p className="text-white font-semibold tracking-wider text-sm mb-5 uppercase">
               Quick Links
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -119,7 +119,7 @@ export default function Footer() {
             <p className="text-white font-semibold tracking-wider text-sm mb-5 uppercase">
               Services
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {serviceLinks.map((link, i) => (
                 <li key={i}>
                   <Link
@@ -139,19 +139,19 @@ export default function Footer() {
             <p className="text-white font-semibold tracking-wider text-sm mb-5 uppercase">
               Get in Touch
             </p>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-primary-400 mt-1 flex-shrink-0" />
                 <a
                   href="mailto:drharshikawellness@gmail.com"
-                  className="text-sm text-white/60 hover:text-primary-400 transition-colors break-all"
+                  className="text-sm text-white/60 hover:text-primary-400 transition-colors break-all leading-relaxed"
                 >
                   drharshikawellness@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary-400 mt-1 flex-shrink-0" />
-                <span className="text-sm text-white/60">
+                <span className="text-sm text-white/60 leading-relaxed">
                   Online Consultations Available
                   <br />
                   Across India
@@ -159,7 +159,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-primary-400 mt-1 flex-shrink-0" />
-                <span className="text-sm text-white/60">
+                <span className="text-sm text-white/60 leading-relaxed">
                   Mon – Sat: 10:00 AM – 7:00 PM
                   <br />
                   Sunday: Closed
@@ -170,23 +170,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Medical Disclaimer */}
-      <div className="border-t border-slate-800">
-        <div className="container-custom py-4">
-          <p className="text-xs text-slate-400 max-w-4xl mx-auto text-center leading-relaxed">
-            <strong className="text-slate-300">Medical Disclaimer:</strong> The
-            information on this website is for educational purposes only and
-            does not constitute medical advice. Always consult a qualified
-            healthcare professional before starting any treatment. Homeopathy
-            results may vary between individuals. Dr. Harshika Singh is a
-            registered BHMS, MD (Hom.) practitioner.
-          </p>
-        </div>
-      </div>
-
       {/* Bottom Bar */}
       <div className="border-t border-slate-800">
-        <div className="container-custom pt-6 pb-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+        <div className="container-custom pt-8 pb-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
           <p>
             © {new Date().getFullYear()} Dr. Harshika Wellness. All rights reserved.
           </p>
