@@ -24,7 +24,7 @@ export default function ContactPage() {
             Get in <span className="gradient-text">Touch</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             Have questions about homeopathic treatment? We&apos;d love to hear from
             you. Reach out and we&apos;ll respond within 24 hours.
           </p>

@@ -17,7 +17,7 @@ export default function BlogPage() {
             Health <span className="gradient-text">Articles</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             Expert insights on homeopathy, hormonal health, musculoskeletal
             wellness, and natural healing from Dr. Harshika Singh.
           </p>

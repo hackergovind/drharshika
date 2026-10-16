@@ -28,7 +28,7 @@ const trustItems = [
 
 export default function TrustBar() {
   return (
-    <section className="trust-bar py-8">
+    <section className="bg-[#EEF5F0] border-y border-emerald-800/15 py-8">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,12 +46,12 @@ export default function TrustBar() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex items-center gap-3 justify-center"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                <item.icon className="w-6 h-6 text-white/90" />
+              <div className="w-12 h-12 rounded-xl bg-emerald-800/10 border border-emerald-800/10 flex items-center justify-center flex-shrink-0">
+                <item.icon className="w-6 h-6 text-emerald-800" />
               </div>
               <div>
-                <p className="font-semibold text-sm text-white">{item.label}</p>
-                <p className="text-xs text-white/60">{item.sublabel}</p>
+                <p className="font-semibold text-sm text-emerald-950">{item.label}</p>
+                <p className="text-xs font-medium text-emerald-800/80">{item.sublabel}</p>
               </div>
             </motion.div>
           ))}

@@ -19,7 +19,7 @@ export default function ServicesPage() {
             Our <span className="gradient-text">Services</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             Comprehensive homeopathic care for hormonal and musculoskeletal
             health. Each treatment plan is individually crafted based on your
             unique constitution and symptoms.

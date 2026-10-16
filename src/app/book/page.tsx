@@ -17,7 +17,7 @@ export default function BookPage() {
             Book Your <span className="gradient-text">Consultation</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             Take the first step towards natural healing. Schedule your
             personalized consultation with Dr. Harshika Singh.
           </p>

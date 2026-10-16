@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
 
             {/* Author / E-E-A-T signal */}
-            <div className="mb-5 p-4 rounded-xl bg-white/5 border border-white/10">
+            <div className="mb-5">
               <p className="text-sm font-semibold text-white mb-1">
                 Dr. Harshika Singh
               </p>
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <p className="text-white font-heading font-semibold text-base mb-5 uppercase tracking-wider">
+            <p className="text-white font-semibold tracking-wider text-sm mb-5 uppercase">
               Quick Links
             </p>
             <ul className="space-y-3">
@@ -116,7 +116,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-white font-heading font-semibold text-base mb-5 uppercase tracking-wider">
+            <p className="text-white font-semibold tracking-wider text-sm mb-5 uppercase">
               Services
             </p>
             <ul className="space-y-3">
@@ -136,7 +136,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <p className="text-white font-heading font-semibold text-base mb-5 uppercase tracking-wider">
+            <p className="text-white font-semibold tracking-wider text-sm mb-5 uppercase">
               Get in Touch
             </p>
             <ul className="space-y-4">
@@ -170,28 +170,38 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Legal Links Bar */}
-      <div className="border-t border-white/10">
-        <div className="container-custom py-4 flex flex-wrap items-center justify-center gap-4">
-          {legalLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-xs text-white/40 hover:text-white/70 transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+      {/* Medical Disclaimer */}
+      <div className="border-t border-slate-800">
+        <div className="container-custom py-4">
+          <p className="text-xs text-slate-400 max-w-4xl mx-auto text-center leading-relaxed">
+            <strong className="text-slate-300">Medical Disclaimer:</strong> The
+            information on this website is for educational purposes only and
+            does not constitute medical advice. Always consult a qualified
+            healthcare professional before starting any treatment. Homeopathy
+            results may vary between individuals. Dr. Harshika Singh is a
+            registered BHMS, MD (Hom.) practitioner.
+          </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/5">
-        <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/40">
+      <div className="border-t border-slate-800">
+        <div className="container-custom pt-6 pb-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+          <p>
             © {new Date().getFullYear()} Dr. Harshika Wellness. All rights reserved.
           </p>
-          <p className="text-xs text-white/40 flex items-center gap-1">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <p className="flex items-center gap-1">
             Made with <Heart className="w-3 h-3 text-secondary" /> for better health
           </p>
         </div>

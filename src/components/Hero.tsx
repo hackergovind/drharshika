@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute top-24 right-[12%] w-72 h-72 rounded-full bg-primary/5 animate-float hidden lg:block pointer-events-none" />
       <div className="absolute bottom-16 left-[8%] w-48 h-48 rounded-full bg-tertiary/5 animate-float hidden lg:block pointer-events-none" style={{ animationDelay: "2s" }} />
 
-      <div className="container-custom relative z-10 pt-24 pb-16 lg:pt-0 lg:pb-0 lg:py-0 lg:min-h-screen lg:flex lg:items-center">
+      <div className="container-custom relative z-10 pt-24 pb-20 lg:pt-28 lg:pb-20 lg:min-h-screen lg:flex lg:items-center">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
 
           {/* ── LEFT: Text Content ── */}
@@ -35,25 +35,28 @@ export default function Hero() {
                 <span className="text-charcoal">Naturally</span>
               </h1>
 
-              <p className="text-base lg:text-lg text-muted leading-relaxed mb-5 max-w-lg mx-auto lg:mx-0">
+              <p className="text-lg lg:text-xl text-slate-600 leading-loose mb-6 max-w-lg mx-auto lg:mx-0">
                 Dr. Harshika Singh brings compassionate, evidence-informed
                 homeopathic care for hormonal health and musculoskeletal
                 conditions — addressing root cause, not just the symptoms.
               </p>
 
-              <p className="text-sm font-medium text-charcoal mb-8">
-                <span className="text-primary font-semibold">BHMS, MD (Hom.)</span>
-                <span className="mx-2 text-muted">•</span>
-                <span className="text-muted">Focused on Hormonal Health, Thyroid Care &amp; Musculoskeletal Conditions</span>
-              </p>
+              <div className="mb-8">
+                <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-3">
+                  BHMS, MD (Hom.)
+                </span>
+                <p className="text-sm text-slate-600">
+                  Focused on Hormonal Health, Thyroid Care &amp; Musculoskeletal Conditions
+                </p>
+              </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-10 justify-center lg:justify-start">
-                <Link href="/book" className="btn-primary justify-center">
+              {/* CTA Buttons — matching rounded-full radius */}
+              <div className="flex flex-col sm:flex-row gap-3 mb-0 justify-center lg:justify-start">
+                <Link href="/book" className="btn-primary justify-center rounded-full">
                   <span>Book Consultation</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/services" className="btn-secondary justify-center">
+                <Link href="/services" className="btn-secondary justify-center rounded-full">
                   <span>Explore Services</span>
                 </Link>
               </div>
@@ -64,14 +67,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="flex flex-wrap gap-8 justify-center lg:justify-start"
+              className="flex flex-wrap items-center gap-6 sm:gap-0 justify-center lg:justify-start mt-8"
             >
               {[
                 { value: "1000+", label: "Patients Treated" },
                 { value: "95%", label: "Patient Satisfaction" },
                 { value: "Pan India", label: "Online Consultations" },
               ].map((stat, i) => (
-                <div key={i} className="text-center">
+                <div
+                  key={i}
+                  className={`text-center lg:text-left ${
+                    i > 0 ? "sm:border-l sm:border-slate-200 sm:pl-8 sm:ml-8" : ""
+                  }`}
+                >
                   <p className="text-2xl font-heading font-bold text-primary">{stat.value}</p>
                   <p className="text-xs text-muted mt-0.5">{stat.label}</p>
                 </div>
@@ -104,9 +112,9 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.9 }}
-                className="absolute -left-4 sm:-left-8 top-1/4 z-20 hidden sm:block"
+                className="absolute -left-3 sm:-left-6 top-[22%] z-10 hidden sm:block"
               >
-                <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 border border-primary/10 flex items-center gap-3 max-w-[170px]">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-md p-3 sm:p-4 border border-primary/10 flex items-center gap-3 max-w-[170px]">
                   <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Heart className="w-4 h-4 text-primary" />
                   </div>
@@ -122,9 +130,9 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 1.1 }}
-                className="absolute -right-4 sm:-right-8 bottom-1/4 z-20 hidden sm:block"
+                className="absolute -right-3 sm:-right-6 bottom-[22%] z-10 hidden sm:block"
               >
-                <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 border border-primary/10 flex items-center gap-3 max-w-[160px]">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-md p-3 sm:p-4 border border-primary/10 flex items-center gap-3 max-w-[160px]">
                   <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0">
                     <Globe className="w-4 h-4 text-orange-500" />
                   </div>

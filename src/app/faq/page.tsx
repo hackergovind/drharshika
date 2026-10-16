@@ -20,7 +20,7 @@ export default function FAQPage() {
             Frequently Asked <span className="gradient-text">Questions</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             Everything you need to know about homeopathic treatment and
             Dr. Harshika&apos;s practice. Can&apos;t find your answer? Get in touch.
           </p>

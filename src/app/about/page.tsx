@@ -26,7 +26,7 @@ export default function AboutPage() {
             About <span className="gradient-text">Dr. Harshika</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             A dedicated homeopathic physician committed to transforming lives
             through natural, evidence-informed healing.
           </p>

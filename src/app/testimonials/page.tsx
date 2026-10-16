@@ -18,7 +18,7 @@ export default function TestimonialsPage() {
             Patient <span className="gradient-text">Testimonials</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             Real stories from real patients whose lives have been transformed
             through Dr. Harshika&apos;s compassionate homeopathic care.
           </p>

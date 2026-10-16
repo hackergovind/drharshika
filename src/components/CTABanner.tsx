@@ -15,10 +15,16 @@ export default function CTABanner() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="font-heading text-white mb-4">
+          <h2
+            className="font-heading font-bold text-white text-3xl md:text-4xl mb-4"
+            style={{ color: "#FFFFFF" }}
+          >
             Begin Your Healing Journey Today
           </h2>
-          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p
+            className="text-emerald-100 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto"
+            style={{ color: "#D1FAE5" }}
+          >
             Take the first step towards natural, lasting wellness. Book your
             personalized consultation with Dr. Harshika Singh and experience
             the transformative power of homeopathy.
@@ -34,7 +40,7 @@ export default function CTABanner() {
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto border border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-emerald-900 transition-colors flex items-center justify-center gap-2"
             >
               <span>Contact Us</span>
               <ArrowRight className="w-5 h-5" />

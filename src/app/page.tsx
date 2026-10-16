@@ -8,6 +8,7 @@ import {
   Bone,
   Sparkles,
   Star,
+  Check,
 } from "lucide-react";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -25,7 +26,7 @@ export default function HomePage() {
       <TrustBar />
 
       {/* Welcome Section */}
-      <section className="section-padding">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-24">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -42,7 +43,7 @@ export default function HomePage() {
                 A Holistic Approach to{" "}
                 <span className="gradient-text">Your Health</span>
               </h2>
-              <div className="space-y-4 text-muted leading-relaxed">
+              <div className="space-y-6 text-slate-600 leading-loose text-[1.05rem]">
                 <p>
                   Dr. Harshika Singh believes that true healing begins when we
                   treat the person, not just the disease. With years of
@@ -58,8 +59,11 @@ export default function HomePage() {
                   the burden of side effects.
                 </p>
                 <p>
-                  Whether you&apos;re struggling with PCOS, thyroid issues, chronic
-                  joint pain, or arthritis, Dr. Harshika&apos;s compassionate and
+                  Whether you&apos;re struggling with{" "}
+                  <strong className="text-slate-800 font-semibold">PCOS</strong>,{" "}
+                  <strong className="text-slate-800 font-semibold">thyroid issues</strong>,{" "}
+                  <strong className="text-slate-800 font-semibold">chronic joint pain</strong>, or{" "}
+                  <strong className="text-slate-800 font-semibold">arthritis</strong>, Dr. Harshika&apos;s compassionate and
                   scientific approach offers a path to genuine wellness.
                 </p>
               </div>
@@ -78,11 +82,11 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="bg-white rounded-3xl p-8 shadow-lg border border-primary/10">
+              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-md border border-slate-200/80">
                 <h3 className="font-heading text-lg font-bold text-charcoal mb-6">
                   Why Choose Homeopathy?
                 </h3>
-                <div className="space-y-5">
+                <ul className="space-y-5">
                   {[
                     {
                       title: "Treats Root Cause",
@@ -105,19 +109,19 @@ export default function HomePage() {
                       desc: "Treats physical, mental, and emotional symptoms as an integrated whole",
                     },
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <div className="w-2 h-2 rounded-full bg-primary" />
-                      </div>
+                    <li key={i} className="flex gap-3 leading-relaxed">
+                      <span className="w-6 h-6 rounded-full bg-emerald-100 border border-emerald-200 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-emerald-700" strokeWidth={3} />
+                      </span>
                       <div>
-                        <p className="font-semibold text-sm text-charcoal">
+                        <p className="font-semibold text-sm text-slate-800">
                           {item.title}
                         </p>
-                        <p className="text-xs text-muted mt-0.5">{item.desc}</p>
+                        <p className="text-sm text-slate-600 mt-0.5 leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -132,19 +136,22 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
+            <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+              ✦ What We Treat
+            </span>
             <h2 className="font-heading text-charcoal">
               Our <span className="gradient-text">Specializations</span>
             </h2>
             <div className="section-divider" />
-            <p className="text-muted mt-4 max-w-2xl mx-auto">
+            <p className="text-slate-600 mt-4 max-w-xl mx-auto text-balance">
               Dr. Harshika specializes in two key areas of health, providing
               expert homeopathic care backed by years of clinical experience.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
             {services.map((service, i) => {
               const Icon = service.icon === "Heart" ? Heart : Bone;
               return (
@@ -154,35 +161,37 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.15 }}
-                  className="card-premium p-8 group"
+                  className="bg-white border border-slate-200/80 rounded-2xl p-8 lg:p-10 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col justify-between"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                    <Icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-heading text-xl font-bold text-charcoal mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted text-sm leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {service.conditions.slice(0, 4).map((cond, j) => (
-                      <span
-                        key={j}
-                        className="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary font-medium"
-                      >
-                        {cond.name}
-                      </span>
-                    ))}
-                    {service.conditions.length > 4 && (
-                      <span className="text-xs px-3 py-1 rounded-full bg-gray-100 text-muted font-medium">
-                        +{service.conditions.length - 4} more
-                      </span>
-                    )}
+                  <div>
+                    <div className="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-6 group-hover:bg-emerald-100/70 transition-colors">
+                      <Icon className="w-8 h-8 text-emerald-700" />
+                    </div>
+                    <h3 className="font-heading text-xl font-bold text-charcoal mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {service.conditions.slice(0, 4).map((cond, j) => (
+                        <span
+                          key={j}
+                          className="px-3 py-1 text-xs rounded-full bg-emerald-50 text-emerald-800 font-medium border border-emerald-100"
+                        >
+                          {cond.name}
+                        </span>
+                      ))}
+                      {service.conditions.length > 4 && (
+                        <span className="bg-slate-100 text-slate-600 rounded-full px-2.5 py-1 text-xs font-medium">
+                          +{service.conditions.length - 4} more
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all mt-auto pt-2"
                   >
                     View All Conditions
                     <ArrowRight className="w-4 h-4" />
@@ -205,19 +214,19 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
             <h2 className="font-heading text-charcoal">
               What Our Patients <span className="gradient-text">Say</span>
             </h2>
             <div className="section-divider" />
-            <p className="text-muted mt-4 max-w-2xl mx-auto">
+            <p className="text-slate-600 mt-4 max-w-xl mx-auto text-center">
               Real stories from real patients who found healing through
               Dr. Harshika&apos;s compassionate homeopathic care.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {testimonials.slice(0, 3).map((t, i) => (
               <motion.div
                 key={t.id}
@@ -225,19 +234,22 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="card-premium p-8"
+                className="h-full"
               >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star
-                      key={j}
-                      className="w-4 h-4 text-tertiary fill-tertiary"
-                    />
-                  ))}
+              <div className="bg-white border border-slate-200/70 rounded-2xl shadow-sm p-8 lg:p-10 h-full flex flex-col justify-between">
+                <div>
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star
+                        key={j}
+                        className="w-4 h-4 text-tertiary fill-tertiary"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-charcoal-light leading-relaxed mb-6 text-sm">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
                 </div>
-                <p className="text-charcoal-light leading-relaxed mb-6 text-sm">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
                 <div className="flex items-center gap-3 pt-4 border-t border-primary/8">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-sm font-bold text-primary">
@@ -251,11 +263,12 @@ export default function HomePage() {
                     </p>
                   </div>
                 </div>
+              </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <Link href="/testimonials" className="btn-secondary">
               <span>View All Testimonials</span>
               <ArrowRight className="w-4 h-4" />
@@ -266,15 +279,6 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <CTABanner />
-
-      {/* YMYL Medical Disclaimer */}
-      <section className="bg-ivory-dark border-t border-primary/10">
-        <div className="container-custom py-6">
-          <p className="text-xs text-muted text-center leading-relaxed max-w-4xl mx-auto">
-            <strong className="text-charcoal-light">Medical Disclaimer:</strong> The information on this website is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional before starting any treatment. Homeopathy results may vary between individuals. Dr. Harshika Singh is a registered BHMS, MD (Hom.) practitioner.
-          </p>
-        </div>
-      </section>
     </>
   );
 }
