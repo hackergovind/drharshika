@@ -1,6 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useReducedMotion,
+} from "framer-motion";
 import {
   ClipboardList,
   Microscope,
@@ -36,8 +42,27 @@ const steps = [
 ];
 
 export default function ConsultationApproach() {
+  const flowRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+
+  // Drives the connector line: 0 when the steps enter the viewport, 1 once they settle in view.
+  const { scrollYProgress } = useScroll({
+    target: flowRef,
+    offset: ["start 85%", "end 60%"],
+  });
+
+  // Smoothed so the line eases along instead of snapping to the scroll position.
+  const drawnLine = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
-    <section className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-white">
+    <section
+      id="consultation-approach"
+      className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-white"
+    >
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,12 +81,53 @@ export default function ConsultationApproach() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Connector line behind step icons (desktop only) */}
-          <div
+        <div className="relative" ref={flowRef}>
+          {/* Scroll-drawn journey line connecting the steps (desktop only).
+              The faint dashed guide is always visible; the solid line draws
+              itself forward as the section scrolls into view. */}
+          <svg
             aria-hidden="true"
-            className="hidden lg:block absolute top-[68px] left-[13%] right-[13%] border-t-2 border-dashed border-emerald-200"
-          />
+            className="hidden lg:block absolute top-[62px] left-[12%] w-[76%] h-3 overflow-visible"
+            viewBox="0 0 100 12"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <defs>
+              {/* userSpaceOnUse: the line is perfectly horizontal, so an
+                  objectBoundingBox gradient would degenerate (zero-height box)
+                  and nothing would paint. */}
+              <linearGradient
+                id="journey-line"
+                gradientUnits="userSpaceOnUse"
+                x1="0"
+                y1="0"
+                x2="100"
+                y2="0"
+              >
+                <stop offset="0%" stopColor="#5E9B6F" />
+                <stop offset="100%" stopColor="#2f5039" />
+              </linearGradient>
+            </defs>
+
+            {/* Guide */}
+            <path
+              d="M0 6 H100"
+              stroke="#a7f3d0"
+              strokeWidth={2}
+              strokeLinecap="butt"
+              strokeDasharray="1 1.6"
+            />
+
+            {/* Progress line */}
+            <motion.path
+              d="M0 6 H100"
+              stroke="url(#journey-line)"
+              strokeWidth={2}
+              strokeLinecap="butt"
+              style={{ pathLength: reduceMotion ? 1 : drawnLine }}
+            />
+          </svg>
+
           <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
               <motion.div
