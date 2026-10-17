@@ -5,12 +5,18 @@ import { motion } from "framer-motion";
 import {
   Activity,
   ArrowRight,
+  CalendarCheck,
   Check,
+  Globe,
   HeartPulse,
+  Info,
+  MessageCircle,
   ShieldPlus,
   Sparkles,
+  Truck,
   type LucideIcon,
 } from "lucide-react";
+import { whatsappUrl } from "@/lib/contact";
 
 type Plan = {
   icon: LucideIcon;
@@ -18,7 +24,6 @@ type Plan = {
   duration: string;
   price: string;
   features: string[];
-  cta: string;
   highlight?: boolean;
 };
 
@@ -27,54 +32,79 @@ const plans: Plan[] = [
     icon: Activity,
     name: "Starter Care",
     duration: "1 Month",
-    price: "1099",
+    price: "1,299",
     features: [
-      "Initial Detailed Consultation",
-      "Customized Diet Plan",
-      "2 Follow-up Sessions",
-      "Basic Chat Support",
+      "Initial detailed consultation",
+      "Personalised homoeopathic treatment plan",
+      "Prescribed medicines included",
+      "Standard courier delivery included",
+      "Two scheduled follow-up sessions",
+      "Basic chat support during clinic hours",
     ],
-    cta: "Book 1 Month Plan",
-    highlight: false,
   },
   {
     icon: HeartPulse,
     name: "Advanced Care",
-    duration: "6 Months",
-    price: "5099",
+    duration: "3 Months",
+    price: "3,499",
     features: [
-      "Everything in Starter Care",
-      "Monthly Progress Consultations",
-      "Unlimited Chat Support",
-      "Priority Booking",
+      "Everything included in Starter Care",
+      "Monthly progress consultations",
+      "Prescribed medicines with scheduled dispatches",
+      "Standard courier delivery included",
+      "Personalised diet and lifestyle guidance, where appropriate",
+      "Progress monitoring and defined chat support",
     ],
-    cta: "Get 6 Months Plan",
     highlight: true,
   },
   {
     icon: ShieldPlus,
     name: "Complete Wellness",
-    duration: "1 Year",
-    price: "9999",
+    duration: "6 Months",
+    price: "6,499",
     features: [
-      "Everything in Advanced Care",
-      "Bi-weekly Check-ins",
-      "24/7 Priority Support",
-      "Comprehensive Health Reports",
+      "Everything included in Advanced Care",
+      "Regular monthly progress consultations",
+      "Prescribed medicines and scheduled courier deliveries",
+      "Individualised follow-up and progress tracking",
+      "Priority appointment booking",
+      "Chat support during specified clinic hours",
     ],
-    cta: "Get 1 Year Plan",
-    highlight: false,
+  },
+  {
+    icon: CalendarCheck,
+    name: "Long-Term Wellness",
+    duration: "12 Months",
+    price: "11,999",
+    features: [
+      "Everything included in Complete Wellness",
+      "Planned monthly consultations and progress reviews",
+      "Prescribed medicines with scheduled dispatches",
+      "Standard courier delivery included",
+      "Personalised treatment monitoring",
+      "Priority appointment scheduling and defined chat support",
+    ],
   },
 ];
 
+const assurances: { icon: LucideIcon; label: string }[] = [
+  { icon: Globe, label: "Online consultations across India" },
+  { icon: Truck, label: "Prescribed medicines & courier included" },
+  { icon: MessageCircle, label: "WhatsApp support for package queries" },
+];
+
 export default function ConsultationPackages() {
+  const enquiryHref = whatsappUrl(
+    "Hello Dr. Harshika! I have a question about the consultation packages and their pricing."
+  );
+
   return (
     <section
       id="consultation-packages"
       className="section-padding relative overflow-hidden bg-ivory"
     >
       {/* Soft colour glows — these sit behind the frosted cards so the
-          backdrop blur actually has something to pick up. Built from radial
+          backdrop blur has something to pick up. Built from radial
           gradients rather than filter:blur() so they never fight with the
           cards' backdrop-filter during compositing. */}
       <div
@@ -92,22 +122,42 @@ export default function ConsultationPackages() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 lg:mb-20"
+          className="text-center mb-8 lg:mb-10"
         >
           <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
-            Transparent Pricing
+            Online Care Packages
           </span>
           <h2 className="font-heading text-charcoal">
             Consultation <span className="gradient-text">Packages</span>
           </h2>
           <div className="section-divider" />
-          <p className="text-slate-600 mt-4 max-w-xl mx-auto text-balance">
-            Fixed-duration care plans — no subscriptions, no hidden charges.
-            Pick the journey that suits your health goals.
+          <p className="text-slate-600 mt-4 max-w-2xl mx-auto text-balance">
+            Medicine-inclusive care plans with consultation, prescribed
+            medicines and standard courier delivery — choose the package that
+            suits your health goals.
           </p>
         </motion.div>
 
-        <div className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+        {/* Assurance strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-10 flex flex-wrap items-center justify-center gap-2.5 lg:mb-14"
+        >
+          {assurances.map(({ icon: Icon, label }) => (
+            <span
+              key={label}
+              className="inline-flex items-center gap-2 rounded-full border border-primary-100 bg-white/70 px-3.5 py-2 text-xs font-medium text-primary-700 backdrop-blur-sm"
+            >
+              <Icon className="h-3.5 w-3.5 flex-shrink-0" />
+              {label}
+            </span>
+          ))}
+        </motion.div>
+
+        <div className="grid items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
           {plans.map((plan, i) => {
             const Icon = plan.icon;
             const highlight = Boolean(plan.highlight);
@@ -118,13 +168,13 @@ export default function ConsultationPackages() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                transition={{ duration: 0.6, delay: i * 0.12 }}
                 className={`relative ${highlight ? "z-10" : "z-0"}`}
               >
                 <div
-                  className={`relative flex h-full flex-col rounded-3xl border p-7 backdrop-blur-xl transition-all duration-300 lg:p-8 ${
+                  className={`relative flex h-full flex-col rounded-3xl border p-6 backdrop-blur-xl transition-all duration-300 xl:p-7 ${
                     highlight
-                      ? "border-white/15 bg-gradient-to-br from-primary/95 via-primary-dark/95 to-primary-800/95 text-white shadow-[0_24px_60px_-12px_rgba(74,124,89,0.45)] lg:scale-[1.04]"
+                      ? "border-white/15 bg-gradient-to-br from-primary/95 via-primary-dark/95 to-primary-800/95 text-white shadow-[0_24px_60px_-12px_rgba(74,124,89,0.45)] xl:scale-[1.04]"
                       : "border-white/70 bg-white/60 shadow-lg hover:-translate-y-1.5 hover:border-primary/15 hover:bg-white/80 hover:shadow-xl"
                   }`}
                 >
@@ -136,15 +186,15 @@ export default function ConsultationPackages() {
                   )}
 
                   {/* Icon + duration */}
-                  <div className="mb-6 flex items-center justify-between gap-3">
+                  <div className="mb-5 flex items-center justify-between gap-2">
                     <div
-                      className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border ${
+                      className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl border ${
                         highlight
                           ? "border-white/20 bg-white/15 text-white"
                           : "border-primary-100 bg-primary-50 text-primary-700"
                       }`}
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-5 w-5" />
                     </div>
                     <span
                       className={`rounded-full border px-3 py-1 text-xs font-semibold ${
@@ -157,35 +207,48 @@ export default function ConsultationPackages() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-xl font-bold">{plan.name}</h3>
+                  {/* Reserving two lines at the 4-column width keeps the
+                      price, divider and feature list on the same baseline
+                      across all four cards. */}
+                  <h3 className="font-heading text-lg font-bold leading-tight xl:min-h-[2.5em]">
+                    {plan.name}
+                  </h3>
 
-                  <div className="mt-3 flex items-baseline gap-1">
+                  <div className="mt-2 flex items-baseline gap-1">
                     <span className="text-lg font-semibold">₹</span>
-                    <span className="text-4xl font-bold tracking-tight">
+                    <span className="text-[2rem] font-bold leading-none tracking-tight">
                       {plan.price}
                     </span>
                   </div>
 
+                  <p
+                    className={`mt-2 text-[11px] font-medium uppercase tracking-wide ${
+                      highlight ? "text-primary-100" : "text-slate-400"
+                    }`}
+                  >
+                    One-time package price
+                  </p>
+
                   <div
-                    className={`my-6 h-px w-full ${
+                    className={`my-5 h-px w-full ${
                       highlight ? "bg-white/15" : "bg-slate-200/70"
                     }`}
                   />
 
                   <ul className="flex-1 space-y-3">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
+                      <li key={feature} className="flex items-start gap-2.5">
                         <span
-                          className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border ${
+                          className={`mt-0.5 flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center rounded-full border ${
                             highlight
                               ? "border-white/20 bg-white/15 text-white"
                               : "border-emerald-200 bg-emerald-100 text-emerald-700"
                           }`}
                         >
-                          <Check className="h-3 w-3" strokeWidth={3} />
+                          <Check className="h-2.5 w-2.5" strokeWidth={3} />
                         </span>
                         <span
-                          className={`text-sm leading-relaxed ${
+                          className={`text-[13px] leading-relaxed ${
                             highlight ? "text-primary-50" : "text-slate-600"
                           }`}
                         >
@@ -197,11 +260,11 @@ export default function ConsultationPackages() {
 
                   <Link
                     href="/book"
-                    className={`mt-8 w-full justify-center ${
+                    className={`mt-6 w-full justify-center ${
                       highlight ? "btn-primary" : "btn-secondary"
                     }`}
                   >
-                    <span>{plan.cta}</span>
+                    <span>Book Consultation</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
@@ -209,6 +272,52 @@ export default function ConsultationPackages() {
             );
           })}
         </div>
+
+        {/* WhatsApp enquiry */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-10 flex justify-center lg:mt-12"
+        >
+          <a
+            href={enquiryHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 rounded-full border border-primary/25 bg-white/70 px-5 py-3 text-sm font-semibold text-primary-700 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white hover:shadow-lg"
+          >
+            <MessageCircle className="h-4 w-4 flex-shrink-0" />
+            Not sure which package suits you? Enquire on WhatsApp
+          </a>
+        </motion.div>
+
+        {/* Pricing disclaimer */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-8 rounded-2xl border border-primary-100 bg-white/70 p-5 backdrop-blur-sm sm:p-6"
+        >
+          <div className="flex items-start gap-3">
+            <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+            <p className="text-[13px] leading-relaxed text-slate-600 sm:text-sm">
+              <span className="font-semibold text-charcoal">
+                Transparent Pricing Policy:{" "}
+              </span>
+              The prices listed above are indicative package prices and include
+              consultation, prescribed medicines, and standard courier delivery
+              as specified in each plan. Actual charges may vary slightly
+              depending on the patient’s individual case, clinical
+              requirements, prescribed medicines, dosage, quantity, treatment
+              duration, and delivery location. Any additional charges, if
+              applicable, will be communicated to the patient in advance and
+              confirmed before payment. A personalised treatment plan and final
+              quotation will be provided after reviewing the case.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
