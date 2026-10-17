@@ -12,6 +12,7 @@ import {
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import ConsultationApproach from "@/components/ConsultationApproach";
+import ConsultationPackages from "@/components/ConsultationPackages";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import CTABanner from "@/components/CTABanner";
 import { services } from "@/lib/utils";
@@ -205,6 +206,9 @@ export default function HomePage() {
 
       {/* Consultation Approach */}
       <ConsultationApproach />
+
+      {/* Consultation Packages */}
+      <ConsultationPackages />
 
       {/* Testimonials Preview */}
       <section className="section-padding bg-ivory">
