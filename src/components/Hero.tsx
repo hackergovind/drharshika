@@ -4,6 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Heart, Globe } from "lucide-react";
+import CountUp from "./CountUp";
+
+const STATS = [
+  { value: 1000, suffix: "+", label: "Patients Treated" },
+  { value: 95, suffix: "%", label: "Patient Satisfaction" },
+  { value: "Pan India", suffix: "", label: "Online Consultations" },
+];
 
 const HEADLINE_LINE_1 = "DR. HARSHIKA";
 const HEADLINE_LINE_2 = "WELLNESS & HOMOEOPATHY";
@@ -103,19 +110,25 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.35 }}
               className="flex flex-wrap items-center gap-6 sm:gap-0 justify-center lg:justify-start mt-8"
             >
-              {[
-                { value: "1000+", label: "Patients Treated" },
-                { value: "95%", label: "Patient Satisfaction" },
-                { value: "Pan India", label: "Online Consultations" },
-              ].map((stat, i) => (
+              {STATS.map((stat, i) => (
                 <div
-                  key={i}
+                  key={stat.label}
                   className={`text-center lg:text-left ${
                     i > 0 ? "sm:border-l sm:border-slate-200 sm:pl-8 sm:ml-8" : ""
                   }`}
                 >
-                  <p className="text-2xl font-heading font-bold text-primary">{stat.value}</p>
-                  <p className="text-xs text-muted mt-0.5">{stat.label}</p>
+                  <p className="text-3xl lg:text-4xl font-heading font-bold text-primary leading-tight">
+                    {typeof stat.value === "number" ? (
+                      <CountUp
+                        to={stat.value}
+                        suffix={stat.suffix}
+                        delay={0.4}
+                      />
+                    ) : (
+                      stat.value
+                    )}
+                  </p>
+                  <p className="text-xs text-muted mt-1.5">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
