@@ -5,6 +5,34 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Heart, Globe } from "lucide-react";
 
+const HEADLINE_LINE_1 = "DR. HARSHIKA";
+const HEADLINE_LINE_2 = "WELLNESS & HOMOEOPATHY";
+/** Delay before the first character appears (lets the hero settle in) */
+const TYPE_START_DELAY_MS = 300;
+/** Delay between each revealed character */
+const TYPE_STEP_MS = 50;
+
+/**
+ * Splits a line into per-character spans that reveal one after another.
+ * Spaces stay as plain text nodes so the headline can still wrap naturally.
+ */
+function typedChars(text: string, offset: number) {
+  return Array.from(text).map((char, i) => {
+    if (char === " ") return " ";
+    return (
+      <span
+        key={`${offset}-${i}`}
+        className="type-char"
+        style={{
+          animationDelay: `${TYPE_START_DELAY_MS + (offset + i) * TYPE_STEP_MS}ms`,
+        }}
+      >
+        {char}
+      </span>
+    );
+  });
+}
+
 export default function Hero() {
   return (
     <section className="hero-pattern min-h-screen flex items-center relative overflow-hidden">
@@ -28,10 +56,17 @@ export default function Hero() {
                 <span>Personalized Homeopathic Care</span>
               </div>
 
-              <h1 className="font-heading mb-5 leading-tight">
-                <span className="text-charcoal">DR. HARSHIKA</span>
+              <h1
+                aria-label={`${HEADLINE_LINE_1} ${HEADLINE_LINE_2}`}
+                className="font-heading mb-5 leading-tight"
+              >
+                <span className="text-charcoal" aria-hidden="true">
+                  {typedChars(HEADLINE_LINE_1, 0)}
+                </span>
                 <br />
-                <span className="gradient-text">WELLNESS &amp; HOMOEOPATHY</span>
+                <span className="gradient-text" aria-hidden="true">
+                  {typedChars(HEADLINE_LINE_2, HEADLINE_LINE_1.length)}
+                </span>
               </h1>
 
               <p className="text-lg lg:text-xl text-slate-600 leading-loose mb-6 max-w-lg mx-auto lg:mx-0">

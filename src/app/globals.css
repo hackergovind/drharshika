@@ -255,6 +255,28 @@ img {
   background-clip: text;
 }
 
+/* ── Hero headline typing reveal (per-character) ── */
+.type-char {
+  visibility: hidden;
+  animation: type-char-reveal 1ms linear forwards;
+}
+
+@keyframes type-char-reveal {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .type-char {
+    visibility: visible;
+    animation: none;
+  }
+}
+
 /* ── Hero Background Pattern ── */
 .hero-pattern {
   position: relative;
