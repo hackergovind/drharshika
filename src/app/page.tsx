@@ -129,7 +129,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Preview */}
-      <section className="section-padding bg-white">
+      <section className="bg-white pt-20 pb-12 lg:pt-28 lg:pb-16">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -320,7 +320,7 @@ export const PillNav: React.FC<PillNavProps> = ({
           ref={navItemsRef}
           className={`hidden lg:flex items-center rounded-full px-1.5 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ${
             scrolled
-              ? "bg-[#FDF8F0]/85 backdrop-blur-xl shadow-xl shadow-emerald-950/15 border border-emerald-950/10"
+              ? "bg-[#FDF8F0]/95 backdrop-blur-xl shadow-xl shadow-emerald-950/15 border border-emerald-950/10"
               : "bg-transparent border border-transparent"
           }`}
           style={{ height: "var(--nav-h)" }}

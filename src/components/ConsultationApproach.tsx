@@ -37,7 +37,7 @@ const steps = [
 
 export default function ConsultationApproach() {
   return (
-    <section className="pt-16 pb-20 lg:pt-24 lg:pb-24 bg-white">
+    <section className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
