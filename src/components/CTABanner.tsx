@@ -16,7 +16,7 @@ export default function CTABanner() {
           className="text-center max-w-3xl mx-auto"
         >
           <h2
-            className="font-heading font-bold text-white text-3xl md:text-4xl mb-4"
+            className="font-heading font-bold text-white mb-4"
             style={{ color: "#FFFFFF" }}
           >
             Begin Your Healing Journey Today
