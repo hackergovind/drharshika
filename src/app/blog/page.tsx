@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts } from "@/lib/utils";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Health Articles",
   description:
     "Read expert articles on homeopathy, PCOS, thyroid health, joint pain, and natural wellness by Dr. Harshika Singh.",
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

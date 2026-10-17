@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTABanner from "@/components/CTABanner";
 import { testimonials } from "@/lib/utils";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Patient Testimonials",
   description:
     "Read real testimonials from patients who found healing through Dr. Harshika's homeopathic care for PCOS, thyroid, joint pain, and more.",
-};
+  path: "/testimonials",
+});
 
 export default function TestimonialsPage() {
   return (

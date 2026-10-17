@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
 import { services } from "@/lib/utils";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Our Services",
   description:
     "Explore Dr. Harshika's specialized homeopathic services for hormonal health (PCOS, Thyroid, Hormonal Imbalance) and musculoskeletal conditions (Arthritis, Joint Pain, Spondylosis).",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

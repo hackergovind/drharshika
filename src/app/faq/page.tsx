@@ -1,19 +1,38 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTABanner from "@/components/CTABanner";
 import { faqs } from "@/lib/utils";
+import { pageMeta } from "@/lib/site";
 import { HelpCircle, ArrowRight } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Frequently Asked Questions",
   description:
     "Find answers to common questions about homeopathic treatment, consultations, and Dr. Harshika's practice.",
+  path: "/faq",
+});
+
+/** Lets Google surface these as expandable answers in the results. */
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
 };
 
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="hero-pattern pt-32 pb-16">
         <div className="container-custom text-center">
           <h1 className="font-heading text-charcoal mb-4">

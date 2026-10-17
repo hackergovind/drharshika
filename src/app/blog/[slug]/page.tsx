@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, formatDate } from "@/lib/utils";
+import { pageMeta } from "@/lib/site";
 import { ArrowLeft, Calendar, Tag, Clock, ArrowRight } from "lucide-react";
 
 // Full article content mapped by slug
@@ -212,19 +213,19 @@ export async function generateMetadata({
   if (!post) {
     return {
       title: "Article Not Found",
+      robots: { index: false, follow: false },
     };
   }
 
-  return {
-    title: `${post.title} | Dr. Harshika Wellness`,
+  return pageMeta({
+    // The root layout appends "| Dr. Harshika Wellness" through its title
+    // template, so the suffix is not repeated here any more.
+    title: post.title,
     description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: "article",
-      publishedTime: post.publishedAt,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+    publishedTime: post.publishedAt,
+  });
 }
 
 export default async function BlogPostPage({

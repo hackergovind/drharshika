@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Privacy Policy",
   description:
     "Privacy Policy for Dr. Harshika Wellness — how we collect, use and protect your personal information.",
-  alternates: {
-    canonical: "https://drharshika.vercel.app/privacy-policy",
-  },
-};
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (

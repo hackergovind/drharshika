@@ -13,6 +13,14 @@ Dr. Harshika Singh is a qualified homeopathic physician offering personalised on
 - Follow-up and monitoring
 - Health blog articles on hormonal and musculoskeletal wellness
 
+## Consultation Packages
+Medicine-inclusive online care plans; prices are indicative and include consultation, prescribed medicines and standard courier delivery:
+- Starter Care — 1 month — ₹1,299
+- Advanced Care — 3 months — ₹3,499
+- Complete Wellness — 6 months — ₹6,499
+- Long-Term Wellness — 12 months — ₹11,999
+Details and the full pricing policy: https://drharshika.in/packages
+
 ## Contact
 - Email: drharshikawellness@gmail.com
 - Instagram: @drharshikahomeopathy
@@ -23,4 +31,4 @@ Dr. Harshika Singh is a qualified homeopathic physician offering personalised on
 - MD (Hom.) — Doctor of Medicine in Homeopathy
 
 ## Website
-https://drharshika.vercel.app
+https://drharshika.in

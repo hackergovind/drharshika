@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import BookingForm from "@/components/BookingForm";
+import { pageMeta } from "@/lib/site";
 import { Shield, Clock, Globe } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Book Consultation",
   description:
     "Book your personalized homeopathic consultation with Dr. Harshika Singh. Online appointments available across India.",
-};
+  path: "/book",
+});
 
 export default function BookPage() {
   return (

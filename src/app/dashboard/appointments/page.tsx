@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import AppointmentCard from "@/components/AppointmentCard";
+import { pageMeta } from "@/lib/site";
 import { ArrowLeft, Plus } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Appointments",
   description: "View and manage your appointments.",
-};
+  path: "/dashboard/appointments",
+  noindex: true,
+});
 
 const sampleAppointments = [
   {

@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Terms of Service",
   description:
     "Terms of Service for Dr. Harshika Wellness — conditions for using our online consultation platform.",
-  alternates: {
-    canonical: "https://drharshika.vercel.app/terms-of-service",
-  },
-};
+  path: "/terms-of-service",
+});
 
 export default function TermsOfServicePage() {
   return (

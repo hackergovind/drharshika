@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Medical Disclaimer",
   description:
     "Medical disclaimer for Dr. Harshika Wellness — important information about homeopathic care and our scope of practice.",
-  alternates: {
-    canonical: "https://drharshika.vercel.app/disclaimer",
-  },
-};
+  path: "/disclaimer",
+});
 
 export default function DisclaimerPage() {
   return (

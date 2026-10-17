@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { Metadata } from "next";
 import {
   CalendarDays,
   FileText,
@@ -8,11 +7,15 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+// Internal area — noindex, and disallowed in robots.txt.
+export const metadata = pageMeta({
   title: "Dashboard",
   description: "Dr. Harshika Wellness patient dashboard.",
-};
+  path: "/dashboard",
+  noindex: true,
+});
 
 const dashboardCards = [
   {

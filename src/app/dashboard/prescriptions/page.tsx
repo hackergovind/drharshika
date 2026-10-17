@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/site";
 import { ArrowLeft, FileText, Calendar, Pill, Download } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Prescriptions",
   description: "View your prescriptions and treatment history.",
-};
+  path: "/dashboard/prescriptions",
+  noindex: true,
+});
 
 const samplePrescriptions = [
   {

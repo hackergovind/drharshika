@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { pageMeta } from "@/lib/site";
 import {
   Mail,
   MapPin,
@@ -9,11 +9,12 @@ import {
   Phone,
 } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Contact Us",
   description:
     "Get in touch with Dr. Harshika Singh for homeopathic consultations, queries, or appointments. Available online across India.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

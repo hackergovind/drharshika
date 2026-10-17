@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_SIZE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/site";
 
-const siteUrl = "https://drharshika.vercel.app";
+const siteUrl = SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -11,8 +19,7 @@ export const metadata: Metadata = {
     default: "Dr. Harshika Wellness | Homeopathic Doctor India",
     template: "%s | Dr. Harshika Wellness",
   },
-  description:
-    "Expert homeopathic care for PCOS, thyroid, hormonal imbalance & joint pain by Dr. Harshika Singh, BHMS MD (Hom.). Online consultations across India.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "homeopathy",
     "PCOS treatment",
@@ -21,38 +28,39 @@ export const metadata: Metadata = {
     "Dr Harshika Singh",
     "homeopathic doctor",
     "online consultation India",
+    "homeopathic consultation packages",
     "hormonal imbalance",
     "arthritis treatment",
   ],
-  authors: [{ name: "Dr. Harshika Singh", url: siteUrl }],
+  authors: [{ name: "Dr. Harshika Singh", url: `${siteUrl}/about` }],
   creator: "Dr. Harshika Singh",
-  publisher: "Dr. Harshika Wellness",
+  publisher: SITE_NAME,
+  // Canonical for the home page only. Every other route sets its own through
+  // pageMeta() in src/lib/site.ts — inheriting this one would tell search
+  // engines that /about, /services & co. are duplicates of the home page.
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Dr. Harshika Wellness — Healing from Within, Naturally",
-    description:
-      "Expert homeopathic care for PCOS, thyroid & joint health by Dr. Harshika Singh, BHMS MD (Hom.). Online consultations across India.",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
     type: "website",
     url: siteUrl,
-    siteName: "Dr. Harshika Wellness",
+    siteName: SITE_NAME,
     images: [
       {
-        url: `${siteUrl}/images/dr-harshika-og.png`,
-        width: 1200,
-        height: 630,
-        alt: "Dr. Harshika Singh - BHMS, MD (Hom.) - Homeopathic Specialist",
+        url: DEFAULT_OG_IMAGE,
+        ...DEFAULT_OG_IMAGE_SIZE,
+        alt: "Dr. Harshika Singh — BHMS, MD (Hom.) — Homeopathic Specialist",
       },
     ],
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Harshika Wellness — Healing from Within, Naturally",
-    description:
-      "Expert homeopathic care for PCOS, thyroid & joint health by Dr. Harshika Singh, BHMS MD (Hom.). Online consultations across India.",
-    images: [`${siteUrl}/images/dr-harshika-og.png`],
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
   robots: {
     index: true,
@@ -66,11 +74,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-touch-icon.png",
+    // Only files that actually exist: the old favicon.ico and
+    // apple-touch-icon.png entries were 404s. logo.png is a 1024x1024 square,
+    // which is what apple-touch-icon wants.
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: "/images/logo.png",
   },
 };
 
@@ -82,8 +90,8 @@ const jsonLd = {
       "@id": `${siteUrl}/#organization`,
       name: "Dr. Harshika Wellness",
       url: siteUrl,
-      logo: `${siteUrl}/images/dr-harshika-logo.png`,
-      image: `${siteUrl}/images/dr-harshika-og.png`,
+      logo: `${siteUrl}/images/logo.png`,
+      image: `${siteUrl}${DEFAULT_OG_IMAGE}`,
       description:
         "Expert homeopathic clinic specialising in hormonal health, thyroid disorders, PCOS, and musculoskeletal conditions. Online consultations available across India.",
       medicalSpecialty: "Homeopathy",
@@ -139,7 +147,7 @@ const jsonLd = {
       honorificSuffix: "BHMS, MD (Hom.)",
       worksFor: { "@id": `${siteUrl}/#organization` },
       url: `${siteUrl}/about`,
-      image: `${siteUrl}/images/dr-harshika-photo.png`,
+      image: `${siteUrl}/images/dr-harshika.png`,
       description:
         "Dr. Harshika Singh is a qualified homeopathic physician (BHMS, MD Hom.) specialising in hormonal disorders, thyroid conditions, PCOS, and musculoskeletal health.",
       knowsAbout: [
@@ -186,9 +194,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Icons are emitted from the metadata.icons block above. The old
+            hand-written <link> tags pointed at /favicon.ico and
+            /apple-touch-icon.png, neither of which exists. */}
       </head>
       <body className="antialiased">
         {/* Skip to content for accessibility */}

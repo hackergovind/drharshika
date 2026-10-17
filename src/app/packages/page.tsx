@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   CalendarCheck,
   ClipboardList,
@@ -9,12 +8,14 @@ import {
 import ConsultationPackages from "@/components/ConsultationPackages";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTABanner from "@/components/CTABanner";
+import { pageMeta } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Consultation Packages",
   description:
     "Medicine-inclusive online homeopathic consultation packages — 1, 3, 6 and 12 month care plans with prescribed medicines and standard courier delivery across India.",
-};
+  path: "/packages",
+});
 
 const steps: { icon: LucideIcon; title: string; body: string }[] = [
   {
@@ -77,9 +78,27 @@ const packageFaqs: { question: string; answer: string }[] = [
   },
 ];
 
+/** Lets Google surface the package questions as expandable answers. */
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: packageFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function PackagesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="hero-pattern pt-32 pb-16">
         <div className="container-custom text-center">
