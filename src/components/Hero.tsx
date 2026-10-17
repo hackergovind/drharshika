@@ -29,14 +29,13 @@ export default function Hero() {
               </div>
 
               <h1 className="font-heading mb-5 leading-tight">
-                <span className="text-charcoal">Healing from </span>
-                <span className="gradient-text">Within,</span>
+                <span className="text-charcoal">DR. HARSHIKA</span>
                 <br />
-                <span className="text-charcoal">Naturally</span>
+                <span className="gradient-text">WELLNESS &amp; HOMOEOPATHY</span>
               </h1>
 
               <p className="text-lg lg:text-xl text-slate-600 leading-loose mb-6 max-w-lg mx-auto lg:mx-0">
-                Dr. Harshika Singh brings compassionate, evidence-informed
+                Dr. Harshika Singh brings compassionate, evidence-based
                 homeopathic care for hormonal health and musculoskeletal
                 conditions — addressing root cause, not just the symptoms.
               </p>
@@ -98,10 +97,10 @@ export default function Hero() {
               {/* Main photo */}
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-primary/10 bg-[#F5EDE0] relative z-10">
                 <Image
-                  src="/images/dr-harshika.png"
+                  src="/images/dr-harshika-hero.jpg"
                   alt="Dr. Harshika Singh, BHMS MD Hom. — Founder & Consulting Physician"
-                  width={1000}
-                  height={700}
+                  width={1280}
+                  height={853}
                   className="w-full h-auto object-contain"
                   priority
                 />
@@ -130,7 +129,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 1.1 }}
-                className="absolute -right-3 sm:-right-6 bottom-[22%] z-10 hidden sm:block"
+                className="absolute -right-3 sm:-right-6 top-[42%] z-10 hidden sm:block"
               >
                 <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-md p-3 sm:p-4 border border-primary/10 flex items-center gap-3 max-w-[160px]">
                   <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0">

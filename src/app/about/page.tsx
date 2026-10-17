@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="section-divider" />
           <p className="text-muted mt-6 max-w-xl mx-auto text-lg text-balance">
             A dedicated homeopathic physician committed to transforming lives
-            through natural, evidence-informed healing.
+            through natural, evidence-based healing.
           </p>
         </div>
       </section>
