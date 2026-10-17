@@ -47,8 +47,8 @@ export default function Hero() {
       <div className="absolute top-24 right-[12%] w-72 h-72 rounded-full bg-primary/5 animate-float hidden lg:block pointer-events-none" />
       <div className="absolute bottom-16 left-[8%] w-48 h-48 rounded-full bg-tertiary/5 animate-float hidden lg:block pointer-events-none" style={{ animationDelay: "2s" }} />
 
-      <div className="container-custom relative z-10 pt-24 pb-20 lg:pt-28 lg:pb-20 lg:min-h-screen lg:flex lg:items-center">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+      <div className="container-custom relative z-10 lg:min-h-screen lg:flex lg:items-center">
+        <div className="hero-inner grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
 
           {/* ── LEFT: Text Content ── */}
           <div className="text-center lg:text-left order-2 lg:order-1">

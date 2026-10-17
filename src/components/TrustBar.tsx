@@ -28,7 +28,7 @@ const trustItems = [
 
 export default function TrustBar() {
   return (
-    <section className="bg-[#EEF5F0] border-y border-emerald-800/15 py-8">
+    <section className="bg-[#EEF5F0] border-y border-emerald-800/15 py-10 lg:py-12">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

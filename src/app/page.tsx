@@ -27,7 +27,7 @@ export default function HomePage() {
       <TrustBar />
 
       {/* Welcome Section */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-24">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -130,7 +130,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Preview */}
-      <section className="bg-white pt-20 pb-12 lg:pt-28 lg:pb-16">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

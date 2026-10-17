@@ -226,17 +226,26 @@ img {
 
 /* ── Section Styles ── */
 .section-padding {
-  padding: 112px 0;
+  padding: 72px 0;
 }
 
 .section-padding-sm {
-  padding: 72px 0;
+  padding: 48px 0;
 }
 
 .container-custom {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
+}
+
+/* The hero sits under the floating pill navbar, so it needs real vertical
+   breathing room and must never run flush into the trust bar below. Note
+   .container-custom declares `padding: 0 32px` from an unlayered rule, which
+   beats Tailwind's pt/pb utilities — so this spacing has to live here. */
+.hero-inner {
+  padding-top: 104px;
+  padding-bottom: 96px;
 }
 
 /* ── Decorative Elements ── */
@@ -588,15 +597,22 @@ img {
 
   /* ── Layout ── */
   .section-padding {
-    padding: 72px 0;
+    padding: 56px 0;
   }
 
   .section-padding-sm {
-    padding: 48px 0;
+    padding: 40px 0;
   }
 
   .container-custom {
     padding: 0 16px;
+  }
+
+  /* .hero-pattern already handles the top clearance under the fixed navbar,
+     so mobile only needs the extra breathing room underneath. */
+  .hero-inner {
+    padding-top: 0;
+    padding-bottom: 40px;
   }
 
   /* ── Typography ── */

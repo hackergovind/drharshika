@@ -61,7 +61,7 @@ export default function ConsultationApproach() {
   return (
     <section
       id="consultation-approach"
-      className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-white"
+      className="section-padding bg-white"
     >
       <div className="container-custom">
         <motion.div
