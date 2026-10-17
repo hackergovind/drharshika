@@ -277,12 +277,12 @@ export const PillNav: React.FC<PillNavProps> = ({
     "--hover-text": hoveredPillTextColor,
     "--pill-text": pillTextColor,
     "--nav-h": "48px",
-    "--pill-pad-x": "18px",
-    "--pill-gap": "6px",
+    "--pill-pad-x": "14px",
+    "--pill-gap": "5px",
   } as React.CSSProperties;
 
   const basePillClasses =
-    "relative overflow-hidden inline-flex items-center justify-center h-[calc(var(--nav-h)-12px)] self-center no-underline rounded-full box-border font-medium text-[13px] uppercase tracking-wider cursor-pointer border border-emerald-950/10 shadow-md shadow-emerald-950/10";
+    "relative overflow-hidden inline-flex items-center justify-center h-[calc(var(--nav-h)-12px)] self-center no-underline rounded-full box-border font-medium text-xs uppercase tracking-wider cursor-pointer border border-emerald-950/10 shadow-md shadow-emerald-950/10";
 
   return (
     <div
@@ -315,10 +315,14 @@ export const PillNav: React.FC<PillNavProps> = ({
           </Link>
         </div>
 
-        {/* Desktop pills — absolutely centered; frosted bar appears on scroll so pills never clash with headings underneath */}
+        {/* Desktop pills — absolutely centered. Only shown from xl up: with
+            eight pills plus the CTA, the bar needs the full max-w-6xl width to
+            stay clear of the button, and below that the drawer is cleaner than
+            a cramped row. Frosted bar appears on scroll so pills never clash
+            with headings underneath. */}
         <div
           ref={navItemsRef}
-          className={`hidden lg:flex items-center rounded-full px-1.5 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ${
+          className={`hidden xl:flex items-center rounded-full px-1.5 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ${
             scrolled
               ? "bg-[#FDF8F0]/95 backdrop-blur-xl shadow-xl shadow-emerald-950/15 border border-emerald-950/10"
               : "bg-transparent border border-transparent"
@@ -397,7 +401,7 @@ export const PillNav: React.FC<PillNavProps> = ({
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
-            className="lg:hidden flex items-center justify-center rounded-full transition-transform active:scale-90 shadow-xl shadow-emerald-950/20"
+            className="xl:hidden flex items-center justify-center rounded-full transition-transform active:scale-90 shadow-xl shadow-emerald-950/20"
             style={{
               width: "var(--nav-h)",
               height: "var(--nav-h)",
@@ -413,7 +417,7 @@ export const PillNav: React.FC<PillNavProps> = ({
       {/* Mobile dropdown */}
       <div
         ref={mobileMenuRef}
-        className="lg:hidden absolute top-full left-0 right-0 mt-2 rounded-2xl overflow-hidden shadow-2xl z-[999] hidden"
+        className="xl:hidden absolute top-full left-0 right-0 mt-2 rounded-2xl overflow-hidden shadow-2xl z-[999] hidden"
         style={{ background: "var(--base)" }}
       >
         <ul className="list-none m-0 p-2 flex flex-col gap-1">

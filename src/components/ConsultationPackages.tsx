@@ -93,7 +93,17 @@ const assurances: { icon: LucideIcon; label: string }[] = [
   { icon: MessageCircle, label: "WhatsApp support for package queries" },
 ];
 
-export default function ConsultationPackages() {
+type ConsultationPackagesProps = {
+  /**
+   * Renders the in-section eyebrow, heading and intro copy. Turn this off on
+   * the dedicated /packages route, where the page hero carries them already.
+   */
+  showHeading?: boolean;
+};
+
+export default function ConsultationPackages({
+  showHeading = true,
+}: ConsultationPackagesProps) {
   const enquiryHref = whatsappUrl(
     "Hello Dr. Harshika! I have a question about the consultation packages and their pricing."
   );
@@ -117,26 +127,28 @@ export default function ConsultationPackages() {
       </div>
 
       <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 lg:mb-10"
-        >
-          <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
-            Online Care Packages
-          </span>
-          <h2 className="font-heading text-charcoal">
-            Consultation <span className="gradient-text">Packages</span>
-          </h2>
-          <div className="section-divider" />
-          <p className="text-slate-600 mt-4 max-w-2xl mx-auto text-balance">
-            Medicine-inclusive care plans with consultation, prescribed
-            medicines and standard courier delivery — choose the package that
-            suits your health goals.
-          </p>
-        </motion.div>
+        {showHeading && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 lg:mb-10"
+          >
+            <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+              Online Care Packages
+            </span>
+            <h2 className="font-heading text-charcoal">
+              Consultation <span className="gradient-text">Packages</span>
+            </h2>
+            <div className="section-divider" />
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto text-balance">
+              Medicine-inclusive care plans with consultation, prescribed
+              medicines and standard courier delivery — choose the package that
+              suits your health goals.
+            </p>
+          </motion.div>
+        )}
 
         {/* Assurance strip */}
         <motion.div
