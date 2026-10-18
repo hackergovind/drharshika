@@ -81,6 +81,11 @@ export const metadata: Metadata = {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/images/logo.png",
   },
+  verification: {
+    other: {
+      "msvalidate.01": "A50A09FE4E207C506BC0BD7A587449FD",
+    },
+  },
 };
 
 const jsonLd = {
