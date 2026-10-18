@@ -290,8 +290,9 @@ export async function POST(request: NextRequest) {
 
     console.log("New appointment request:", JSON.stringify(appointment, null, 2));
 
-    // Send email notification (async, non-blocking for patient response)
-    sendEmailNotification(appointmentData).catch((err) => {
+    // Send the notification before responding. On Workers, async work that is
+    // not awaited can be cancelled once the response is returned.
+    await sendEmailNotification(appointmentData).catch((err) => {
       console.error("Email notification failed silently:", err);
     });
 
