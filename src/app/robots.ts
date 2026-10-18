@@ -2,31 +2,51 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
 /**
- * /robots.txt — generated from SITE_URL so the Sitemap line can never drift
- * away from the domain. (There used to be a static public/robots.txt that
- * still pointed at the old *.vercel.app host.)
+ * /robots.txt — Optimized for Search & AEO (Answer Engine Optimization)
+ *
+ * Rules:
+ * 1. Allow search engines & AI answer engines (Googlebot, Bingbot, GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot).
+ * 2. Block pure AI scraping/training crawlers (Google-Extended, Applebot-Extended, Bytespider, CCBot, etc.).
+ * 3. Disallow private directories (/api/, /dashboard/) for all bots.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // Block AI training & web scrapers from harvesting content for training
       {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/dashboard/"],
+        userAgent: [
+          "Google-Extended",
+          "Applebot-Extended",
+          "Amazonbot",
+          "Bytespider",
+          "CCBot",
+          "Diffbot",
+          "anthropic-ai",
+          "cohere-ai",
+          "MistralAI-Training",
+          "meta-externalagent",
+          "omgili",
+          "PetalBot",
+        ],
+        disallow: ["/"],
       },
+      // Explicitly allow AI Search, Answer Engines & Major Web Crawlers
       {
-        // Answer engines and AI search assistants are welcome on public pages
         userAgent: [
           "Googlebot",
+          "Bingbot",
           "GPTBot",
           "ChatGPT-User",
           "ClaudeBot",
           "Claude-Web",
           "PerplexityBot",
-          "Google-Extended",
-          "Applebot-Extended",
-          "Bingbot",
         ],
+        allow: "/",
+        disallow: ["/api/", "/dashboard/"],
+      },
+      // Default rule for all other legitimate crawlers
+      {
+        userAgent: "*",
         allow: "/",
         disallow: ["/api/", "/dashboard/"],
       },
