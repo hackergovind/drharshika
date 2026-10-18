@@ -261,40 +261,74 @@ export default async function BlogPostPage({
 
   const fullContent = contentMap[slug];
 
-  const articleJsonLd = {
+  const articleGraphJsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/blog/${post.slug}`,
-    },
-    author: {
-      "@type": "Person",
-      name: "Dr. Harshika Singh",
-      jobTitle: "Homeopathic Physician",
-      url: `${SITE_URL}/about`,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Dr. Harshika Wellness",
-      url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/images/logo.png`,
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${SITE_URL}/blog/${post.slug}#article`,
+        headline: post.title,
+        description: post.excerpt,
+        image: `${SITE_URL}/images/dr-harshika-og.png`,
+        datePublished: post.publishedAt,
+        dateModified: post.publishedAt,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/blog/${post.slug}`,
+        },
+        author: {
+          "@type": "Person",
+          "@id": `${SITE_URL}/#doctor`,
+          name: "Dr. Harshika Singh",
+          jobTitle: "Homeopathic Physician",
+          honorificSuffix: "BHMS, MD (Hom.)",
+          url: `${SITE_URL}/about`,
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}/#organization`,
+          name: "Dr. Harshika Wellness",
+          url: SITE_URL,
+          logo: {
+            "@type": "ImageObject",
+            url: `${SITE_URL}/images/logo.png`,
+          },
+        },
+        articleSection: post.category,
+        inLanguage: "en-IN",
       },
-    },
-    articleSection: post.category,
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/blog/${post.slug}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Health Articles",
+            item: `${SITE_URL}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: `${SITE_URL}/blog/${post.slug}`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleGraphJsonLd) }}
       />
       {/* Hero Header */}
       <section className="hero-pattern pt-32 pb-16">

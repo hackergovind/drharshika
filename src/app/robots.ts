@@ -15,8 +15,18 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/dashboard/"],
       },
       {
-        // Answer engines are welcome on the public pages.
-        userAgent: ["GPTBot", "Claude-Web", "Googlebot"],
+        // Answer engines and AI search assistants are welcome on public pages
+        userAgent: [
+          "Googlebot",
+          "GPTBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-Web",
+          "PerplexityBot",
+          "Google-Extended",
+          "Applebot-Extended",
+          "Bingbot",
+        ],
         allow: "/",
         disallow: ["/api/", "/dashboard/"],
       },
