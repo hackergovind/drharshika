@@ -29,3 +29,5 @@ npm-debug.log*
 
 # Cloudflare / wrangler
 .wrangler/
+
+*.tsbuildinfo
