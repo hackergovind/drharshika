@@ -37,9 +37,9 @@
   ],
   "exclude": [
     "node_modules",
-    "cloudflare.config.ts",
     "dist",
     ".vinext",
-    ".cloudflare"
+    ".cloudflare",
+    ".wrangler"
   ]
 }
