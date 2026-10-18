@@ -35,10 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/homeopathy-doctor-bareilly`,
+      url: `${SITE_URL}/pcos-treatment-homeopathy`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.85,
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/thyroid-treatment-homeopathy`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/services`,

@@ -14,7 +14,8 @@ const quickLinks = [
   { href: "/about", label: "About Dr. Harshika" },
   { href: "/services", label: "Our Services" },
   { href: "/packages", label: "Packages & Fees" },
-  { href: "/homeopathy-doctor-bareilly", label: "Bareilly Consultations" },
+  { href: "/pcos-treatment-homeopathy", label: "PCOS Care India" },
+  { href: "/thyroid-treatment-homeopathy", label: "Thyroid Care India" },
   { href: "/testimonials", label: "Patient Stories" },
   { href: "/blog", label: "Health Articles" },
   { href: "/faq", label: "FAQs" },
@@ -22,8 +23,8 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { href: "/services#hormonal", label: "PCOS Treatment" },
-  { href: "/services#hormonal", label: "Thyroid Care" },
+  { href: "/pcos-treatment-homeopathy", label: "PCOS & PCOD Care" },
+  { href: "/thyroid-treatment-homeopathy", label: "Thyroid Disorders" },
   { href: "/services#hormonal", label: "Hormonal Balance" },
   { href: "/services#musculoskeletal", label: "Joint Pain Relief" },
   { href: "/services#musculoskeletal", label: "Arthritis Care" },
