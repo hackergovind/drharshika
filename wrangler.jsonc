@@ -6,6 +6,10 @@
     "nodejs_compat"
   ],
   "main": "vinext/server/fetch-handler",
+  "routes": [
+    { "pattern": "drharshika.in/*", "zone_name": "drharshika.in" },
+    { "pattern": "www.drharshika.in/*", "zone_name": "drharshika.in" }
+  ],
   "assets": {
     "directory": "dist/client",
     "html_handling": "none",
