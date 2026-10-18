@@ -23,3 +23,9 @@ Thumbs.db
 
 # Debug
 npm-debug.log*
+/dist/
+.vinext/
+.cloudflare/
+
+# Cloudflare / wrangler
+.wrangler/
