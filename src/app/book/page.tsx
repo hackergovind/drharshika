@@ -3,9 +3,9 @@ import { pageMeta } from "@/lib/site";
 import { Shield, Clock, Globe } from "lucide-react";
 
 export const metadata = pageMeta({
-  title: "Book Consultation",
+  title: "Book Online Homeopathic Consultation",
   description:
-    "Book your personalized homeopathic consultation with Dr. Harshika Singh. Online appointments available across India.",
+    "Schedule your online homeopathic consultation with Dr. Harshika Singh, BHMS, MD (Hom.). Convenient appointments and personalized care across India.",
   path: "/book",
 });
 

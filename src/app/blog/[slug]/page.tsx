@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, formatDate } from "@/lib/utils";
-import { pageMeta } from "@/lib/site";
+import { pageMeta, SITE_URL } from "@/lib/site";
 import { ArrowLeft, Calendar, Tag, Clock, ArrowRight } from "lucide-react";
 
 // Full article content mapped by slug
@@ -261,8 +261,41 @@ export default async function BlogPostPage({
 
   const fullContent = contentMap[slug];
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${post.slug}`,
+    },
+    author: {
+      "@type": "Person",
+      name: "Dr. Harshika Singh",
+      jobTitle: "Homeopathic Physician",
+      url: `${SITE_URL}/about`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Dr. Harshika Wellness",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/logo.png`,
+      },
+    },
+    articleSection: post.category,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Hero Header */}
       <section className="hero-pattern pt-32 pb-16">
         <div className="container-custom">
