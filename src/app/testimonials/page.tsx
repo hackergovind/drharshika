@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/site";
 export const metadata = pageMeta({
   title: "Patient Testimonials",
   description:
-    "Read real testimonials from patients who found healing through Dr. Harshika's homeopathic care for PCOS, thyroid, joint pain, and more.",
+    "Read real patient reviews and recovery stories from individuals who experienced healing through Dr. Harshika's personalized homeopathic care across India.",
   path: "/testimonials",
 });
 

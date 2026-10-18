@@ -101,6 +101,12 @@ const jsonLd = {
       description:
         "Expert homeopathic clinic specialising in hormonal health, thyroid disorders, PCOS, and musculoskeletal conditions. Online consultations available across India.",
       medicalSpecialty: "Homeopathy",
+      priceRange: "₹₹",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "IN",
+        addressLocality: "India",
+      },
       availableService: [
         {
           "@type": "MedicalTherapy",
@@ -118,7 +124,7 @@ const jsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         email: "drharshikawellness@gmail.com",
-        contactType: "Appointment Booking",
+        contactType: "customer support",
         availableLanguage: ["English", "Hindi"],
         areaServed: "IN",
       },

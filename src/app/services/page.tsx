@@ -4,9 +4,9 @@ import { services } from "@/lib/utils";
 import { pageMeta } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Homeopathic Treatments for PCOS, Thyroid & Joint Pain",
+  title: "PCOS, Thyroid & Joint Pain Homeopathy",
   description:
-    "Specialized homeopathic treatments for PCOS/PCOD, thyroid disorders, hormonal imbalance, arthritis, and joint pain by Dr. Harshika Singh. Online consultations across India.",
+    "Expert homeopathic treatment for PCOS/PCOD, thyroid disorders, hormonal imbalance, and joint pain by Dr. Harshika Singh. Online consultations across India.",
   path: "/services",
 });
 

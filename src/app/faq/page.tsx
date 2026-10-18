@@ -8,7 +8,7 @@ import { HelpCircle, ArrowRight } from "lucide-react";
 export const metadata = pageMeta({
   title: "Frequently Asked Questions",
   description:
-    "Find answers to common questions about homeopathic treatment, consultations, and Dr. Harshika's practice.",
+    "Find clear answers to common questions about homeopathic consultations, treatment timelines, medicine safety, and online appointments across India.",
   path: "/faq",
 });
 

@@ -11,9 +11,9 @@ import CTABanner from "@/components/CTABanner";
 import { pageMeta } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Homeopathic Consultation Packages & Pricing",
+  title: "Consultation Packages & Pricing",
   description:
-    "Transparent homeopathic consultation packages from ₹1,299. Includes detailed doctor consultation, prescribed medicines, and courier delivery across India.",
+    "Transparent homeopathic care packages from ₹1,299. Includes detailed doctor consultation, prescribed medicines, and courier delivery across India.",
   path: "/packages",
 });
 
