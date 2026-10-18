@@ -46,11 +46,14 @@ export default function HomePage() {
               </h2>
               <div className="space-y-6 text-slate-600 leading-loose text-[1.05rem]">
                 <p>
-                  Dr. Harshika Singh believes that true healing begins when we
-                  treat the person, not just the disease. With years of
-                  specialized training and clinical experience, she combines the
-                  time-tested principles of homeopathy with a deep understanding
-                  of modern medicine.
+                  Dr. Harshika Singh is a qualified{" "}
+                  <strong className="text-slate-800 font-semibold">
+                    Homeopathic Doctor in India
+                  </strong>{" "}
+                  who believes that true healing begins when we treat the person,
+                  not just the disease. Combining the time-tested principles of
+                  homoeopathy and holistic medicine with a deep clinical
+                  understanding, she provides personalized patient care across India.
                 </p>
                 <p>
                   Her practice focuses on two critical areas that affect millions

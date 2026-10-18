@@ -64,9 +64,11 @@ export default function Hero() {
               </div>
 
               <h1
-                aria-label={`${HEADLINE_LINE_1} ${HEADLINE_LINE_2}`}
                 className="font-heading mb-5 leading-tight"
               >
+                <span className="sr-only">
+                  Dr. Harshika Wellness &amp; Homoeopathy | Homeopathic Doctor India
+                </span>
                 <span className="text-charcoal" aria-hidden="true">
                   {typedChars(HEADLINE_LINE_1, 0)}
                 </span>
