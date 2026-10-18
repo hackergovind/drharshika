@@ -13,6 +13,8 @@ import {
 const quickLinks = [
   { href: "/about", label: "About Dr. Harshika" },
   { href: "/services", label: "Our Services" },
+  { href: "/packages", label: "Packages & Fees" },
+  { href: "/homeopathy-doctor-bareilly", label: "Bareilly Consultations" },
   { href: "/testimonials", label: "Patient Stories" },
   { href: "/blog", label: "Health Articles" },
   { href: "/faq", label: "FAQs" },
