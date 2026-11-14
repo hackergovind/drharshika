@@ -19,6 +19,7 @@ const quickLinks = [
   { href: "/testimonials", label: "Patient Stories" },
   { href: "/blog", label: "Health Articles" },
   { href: "/faq", label: "FAQs" },
+  { href: "/app", label: "Android App (APK)" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -93,6 +94,29 @@ export default function Footer() {
                 aria-label="Follow Dr. Harshika on Facebook"
               >
                 <Facebook className="w-4 h-4 text-white/80" />
+              </a>
+            </div>
+
+            {/* Android App Download Badge */}
+            <div className="mt-6 pt-5 border-t border-white/10">
+              <p className="text-xs text-white/70 font-semibold mb-2.5 uppercase tracking-wider">
+                Mobile App
+              </p>
+              <a
+                href="/downloads/Harshika-eClinic.apk"
+                download="Harshika-eClinic.apk"
+                className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-all text-xs group"
+                title="Download Harshika eClinic APK directly on Android"
+              >
+                <div className="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 24 24" role="img" aria-label="Android">
+                    <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-1 0-.5514.4482-1 .9993-1 .5511 0 .9993.4486.9993 1 0 .5514-.4482 1-.9993 1m-11.046 0c-.5511 0-.9993-.4486-.9993-1 0-.5514.4482-1 .9993-1 .5511 0 .9993.4486.9993 1 0 .5514-.4482 1-.9993 1m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5834 8.4116 13.8543 8.125 12 8.125c-1.8543 0-3.5834.2866-5.1368.8247L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.152 1.5676l1.9973 3.4592C2.6889 12.1867 0 16.0365 0 20.625h24c0-4.5885-2.6889-8.4383-6.1185-11.3036" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-white leading-tight">Harshika eClinic</p>
+                  <p className="text-[10px] text-white/60">Download Android APK (25 MB)</p>
+                </div>
               </a>
             </div>
           </div>

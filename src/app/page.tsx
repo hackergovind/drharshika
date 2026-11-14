@@ -14,6 +14,7 @@ import TrustBar from "@/components/TrustBar";
 import ConsultationApproach from "@/components/ConsultationApproach";
 import ConsultationPackages from "@/components/ConsultationPackages";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
+import AppDownloadBanner from "@/components/AppDownloadBanner";
 import CTABanner from "@/components/CTABanner";
 import { services } from "@/lib/utils";
 
@@ -243,6 +244,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* App Download Banner */}
+      <AppDownloadBanner />
 
       {/* CTA Banner */}
       <CTABanner />
