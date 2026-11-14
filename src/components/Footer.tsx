@@ -10,6 +10,8 @@ import {
   MapPin,
 } from "lucide-react";
 
+import { APK_DOWNLOAD_URL } from "@/lib/site";
+
 const quickLinks = [
   { href: "/about", label: "About Dr. Harshika" },
   { href: "/services", label: "Our Services" },
@@ -103,8 +105,7 @@ export default function Footer() {
                 Mobile App
               </p>
               <a
-                href="/downloads/Harshika-eClinic.apk"
-                download="Harshika-eClinic.apk"
+                href={APK_DOWNLOAD_URL}
                 className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-all text-xs group"
                 title="Download Harshika eClinic APK directly on Android"
               >

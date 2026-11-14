@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, Download, X } from "lucide-react";
 import PillNav from "./PillNav";
+import { APK_DOWNLOAD_URL } from "@/lib/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -60,8 +61,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2 shrink-0">
               <a
-                href="/downloads/Harshika-eClinic.apk"
-                download="Harshika-eClinic.apk"
+                href={APK_DOWNLOAD_URL}
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-500 hover:bg-orange-600 text-white shadow-sm transition-transform hover:-translate-y-0.5"
                 title="Direct APK Download (25 MB)"
               >

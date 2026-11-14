@@ -13,7 +13,7 @@ import {
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
-import { pageMeta } from "@/lib/site";
+import { pageMeta, APK_DOWNLOAD_URL } from "@/lib/site";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = pageMeta({
@@ -56,8 +56,7 @@ export default function AppDownloadPage() {
             {/* Direct Download Button */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
               <a
-                href="/downloads/Harshika-eClinic.apk"
-                download="Harshika-eClinic.apk"
+                href={APK_DOWNLOAD_URL}
                 className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-white shadow-xl flex items-center justify-center gap-3 transition-all hover:-translate-y-1 hover:shadow-orange-900/30"
                 style={{
                   background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)",
@@ -225,8 +224,7 @@ export default function AppDownloadPage() {
           {/* Bottom Download Card */}
           <div className="mt-12 text-center">
             <a
-              href="/downloads/Harshika-eClinic.apk"
-              download="Harshika-eClinic.apk"
+              href={APK_DOWNLOAD_URL}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white shadow-xl hover:-translate-y-0.5 transition-all"
               style={{
                 background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)",

@@ -1,11 +1,29 @@
 import type { NextConfig } from "next";
 
+const APK_URL =
+  "https://github.com/hackergovind/drharshika/releases/download/v1.0.0/Harshika-eClinic.apk";
+
 const nextConfig: NextConfig = {
   async redirects() {
-    // The site is still reachable on its old *.vercel.app host. Send it to the
-    // custom domain permanently so Google treats drharshika.in as the only
-    // version and does not split ranking signals between the two.
     return [
+      {
+        source: "/downloads/Harshika-eClinic.apk",
+        destination: APK_URL,
+        permanent: false,
+      },
+      {
+        source: "/downloads/harshika-eclinic.apk",
+        destination: APK_URL,
+        permanent: false,
+      },
+      {
+        source: "/downloads/Harshika%20eClinic.apk",
+        destination: APK_URL,
+        permanent: false,
+      },
+      // The site is still reachable on its old *.vercel.app host. Send it to the
+      // custom domain permanently so Google treats drharshika.in as the only
+      // version and does not split ranking signals between the two.
       {
         source: "/:path*",
         has: [{ type: "host", value: "drharshika.vercel.app" }],

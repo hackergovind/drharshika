@@ -17,6 +17,12 @@ export const SITE_DESCRIPTION =
   "Expert homeopathic care for PCOS, thyroid, hormonal imbalance & joint pain by Dr. Harshika Singh, BHMS MD (Hom.). Online consultations across India.";
 
 /**
+ * Official Android App direct download URL (hosted on GitHub Release CDN).
+ */
+export const APK_DOWNLOAD_URL =
+  "https://github.com/hackergovind/drharshika/releases/download/v1.0.0/Harshika-eClinic.apk";
+
+/**
  * Social preview image. Note the real dimensions: the asset is square
  * (1024x1024), so declaring 1200x630 made crawlers crop it badly.
  */

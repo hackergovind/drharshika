@@ -8,10 +8,9 @@ import {
   CheckCircle2,
   Calendar,
   FileText,
-  Clock,
   Sparkles,
-  ArrowDown,
 } from "lucide-react";
+import { APK_DOWNLOAD_URL } from "@/lib/site";
 
 export default function AppDownloadBanner() {
   return (
@@ -75,8 +74,7 @@ export default function AppDownloadBanner() {
             {/* Download CTA Button & Metadata */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
               <a
-                href="/downloads/Harshika-eClinic.apk"
-                download="Harshika-eClinic.apk"
+                href={APK_DOWNLOAD_URL}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-base shadow-xl shadow-orange-950/30 hover:-translate-y-1 transition-all"
                 style={{
                   background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)",
@@ -198,8 +196,7 @@ export default function AppDownloadBanner() {
 
                   {/* Bottom in-app CTA button */}
                   <a
-                    href="/downloads/Harshika-eClinic.apk"
-                    download="Harshika-eClinic.apk"
+                    href={APK_DOWNLOAD_URL}
                     className="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-medium text-xs flex items-center justify-center gap-1.5 shadow hover:opacity-95 transition-opacity"
                   >
                     <Download className="w-3.5 h-3.5" />
