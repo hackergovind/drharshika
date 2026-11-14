@@ -277,8 +277,8 @@ export const PillNav: React.FC<PillNavProps> = ({
     "--hover-text": hoveredPillTextColor,
     "--pill-text": pillTextColor,
     "--nav-h": "48px",
-    "--pill-pad-x": "14px",
-    "--pill-gap": "5px",
+    "--pill-pad-x": "12px",
+    "--pill-gap": "4px",
   } as React.CSSProperties;
 
   const basePillClasses =
@@ -287,7 +287,7 @@ export const PillNav: React.FC<PillNavProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative z-[1000] w-full max-w-6xl mx-auto ${className}`}
+      className={`relative z-[1000] w-full max-w-7xl mx-auto ${className}`}
       style={cssVars}
     >
       <nav
@@ -315,14 +315,10 @@ export const PillNav: React.FC<PillNavProps> = ({
           </Link>
         </div>
 
-        {/* Desktop pills — absolutely centered. Only shown from xl up: with
-            eight pills plus the CTA, the bar needs the full max-w-6xl width to
-            stay clear of the button, and below that the drawer is cleaner than
-            a cramped row. Frosted bar appears on scroll so pills never clash
-            with headings underneath. */}
+        {/* Desktop pills — slid left to ensure comfortable clearance from CTA button */}
         <div
           ref={navItemsRef}
-          className={`hidden xl:flex items-center rounded-full px-1.5 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ${
+          className={`hidden xl:flex items-center rounded-full px-1.5 absolute left-[calc(50%-55px)] -translate-x-1/2 transition-all duration-300 ${
             scrolled
               ? "bg-[#FDF8F0]/95 backdrop-blur-xl shadow-xl shadow-emerald-950/15 border border-emerald-950/10"
               : "bg-transparent border border-transparent"
