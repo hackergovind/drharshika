@@ -116,7 +116,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="font-semibold text-white leading-tight">Harshika eClinic</p>
-                  <p className="text-[10px] text-white/60">Download Android APK (25 MB)</p>
+                  <p className="text-[10px] text-white/60">Download Android APK (33 MB)</p>
                 </div>
               </a>
             </div>

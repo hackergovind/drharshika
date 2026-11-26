@@ -91,7 +91,7 @@ export default function AppDownloadBanner() {
 
               <div className="flex items-center gap-2 text-xs text-emerald-200/80 px-2 justify-center sm:justify-start">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Verified Safe &amp; Clean (25 MB)</span>
+                <span>Verified Safe &amp; Clean (33 MB)</span>
               </div>
             </div>
 

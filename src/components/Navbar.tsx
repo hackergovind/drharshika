@@ -63,11 +63,11 @@ export default function Navbar() {
               <a
                 href={APK_DOWNLOAD_URL}
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-500 hover:bg-orange-600 text-white shadow-sm transition-transform hover:-translate-y-0.5"
-                title="Direct APK Download (25 MB)"
+                title="Direct APK Download (33 MB)"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Download APK</span>
-                <span className="hidden sm:inline text-[10px] opacity-90">(25 MB)</span>
+                <span className="hidden sm:inline text-[10px] opacity-90">(33 MB)</span>
               </a>
               <button
                 onClick={handleDismiss}

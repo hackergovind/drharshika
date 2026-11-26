@@ -88,7 +88,7 @@ export default function AppDownloadPage() {
               <span>•</span>
               <span>Version: 1.0 (Latest)</span>
               <span>•</span>
-              <span>File Size: ~25 MB</span>
+              <span>File Size: ~33 MB</span>
               <span>•</span>
               <span>Compatible: Android 6.0 &amp; Above</span>
             </div>
@@ -175,7 +175,7 @@ export default function AppDownloadPage() {
               {
                 step: "1",
                 title: "Download the APK file",
-                desc: "Tap the 'Download Harshika eClinic.apk' button above. Your browser will start downloading the 25 MB file directly to your phone.",
+                desc: "Tap the 'Download Harshika eClinic.apk' button above. Your browser will start downloading the 33 MB file directly to your phone.",
               },
               {
                 step: "2",
