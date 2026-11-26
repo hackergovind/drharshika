@@ -8,9 +8,11 @@ import {
   Heart,
   ArrowRight,
   MapPin,
+  MessageCircle,
 } from "lucide-react";
 
 import { APK_DOWNLOAD_URL } from "@/lib/site";
+import { whatsappUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 const quickLinks = [
   { href: "/about", label: "About Dr. Harshika" },
@@ -168,6 +170,17 @@ export default function Footer() {
               Get in Touch
             </p>
             <ul className="space-y-5">
+              <li className="flex items-start gap-3">
+                <MessageCircle className="w-4 h-4 text-[#25D366] mt-1 flex-shrink-0" />
+                <a
+                  href={whatsappUrl("Hello Dr. Harshika, I'd like to inquire about a consultation.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/90 hover:text-[#25D366] transition-colors leading-relaxed font-medium"
+                >
+                  WhatsApp: {WHATSAPP_DISPLAY}
+                </a>
+              </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-primary-400 mt-1 flex-shrink-0" />
                 <a

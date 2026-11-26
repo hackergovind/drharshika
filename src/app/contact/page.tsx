@@ -7,7 +7,9 @@ import {
   Instagram,
   Facebook,
   Phone,
+  MessageCircle,
 } from "lucide-react";
+import { whatsappUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export const metadata = pageMeta({
   title: "Contact Us",
@@ -43,6 +45,31 @@ export default function ContactPage() {
                     Contact Information
                   </h3>
                   <div className="space-y-5">
+                    <div className="flex gap-4 p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-100">
+                      <div className="w-12 h-12 rounded-xl bg-[#25D366]/20 flex items-center justify-center flex-shrink-0 text-[#25D366]">
+                        <MessageCircle className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-charcoal flex items-center gap-2">
+                          WhatsApp Direct
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#25D366] text-white">
+                            Fastest
+                          </span>
+                        </p>
+                        <a
+                          href={whatsappUrl("Hello Dr. Harshika! I would like to consult with you.")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-[#128C7E] hover:underline transition-colors block mt-0.5"
+                        >
+                          {WHATSAPP_DISPLAY}
+                        </a>
+                        <p className="text-xs text-muted mt-0.5">
+                          Direct message on WhatsApp for appointments &amp; queries
+                        </p>
+                      </div>
+                    </div>
+
                     <div className="flex gap-4">
                       <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Mail className="w-5 h-5 text-primary" />

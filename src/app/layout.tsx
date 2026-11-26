@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import {
   DEFAULT_OG_IMAGE,
   DEFAULT_OG_IMAGE_SIZE,
@@ -123,6 +124,7 @@ const jsonLd = {
       ],
       contactPoint: {
         "@type": "ContactPoint",
+        telephone: "+91-9258715490",
         email: "drharshikawellness@gmail.com",
         contactType: "customer support",
         availableLanguage: ["English", "Hindi"],
@@ -223,6 +225,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
         <Chatbot />
       </body>
     </html>
